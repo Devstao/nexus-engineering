@@ -499,26 +499,27 @@ function CTA() {
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)] opacity-60" />
           <div className="absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
           <div className="relative">
-            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Acesso por convite</div>
+            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Bora junto?</div>
             <h2 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1] tracking-tight">
-              Construa <span className="gold-gradient-text">em outro nível.</span>
+              Cola na <span className="gold-gradient-text">Devstão.</span>
             </h2>
             <p className="mx-auto mt-7 max-w-xl text-lg text-muted-foreground">
-              Aplique para participar da Devstão. Curadoria feita por IMPERA e pelo núcleo da comunidade.
+              Sem prova, sem entrevista chata. Se você curte código e quer trocar ideia com quem
+              também curte, tá no lugar certo.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#"
                 className="group inline-flex items-center gap-2.5 rounded-sm bg-gradient-to-b from-gold to-gold-deep px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-background glow-gold transition-transform hover:scale-[1.02]"
               >
-                Solicitar Acesso
+                Entrar no Discord
                 <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href="#"
                 className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-gold"
               >
-                Ver requisitos →
+                Ver o canal do IMPERA →
               </a>
             </div>
           </div>
