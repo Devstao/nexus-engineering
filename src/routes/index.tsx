@@ -245,9 +245,9 @@ function Stack() {
       <div className="absolute inset-0 bg-grid-fine [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]" />
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="Stack Técnica"
-          title={<>O <span className="gold-gradient-text">arsenal</span> da comunidade.</>}
-          lead="Tecnologias que dominamos, discutimos e construímos. De systems programming a desktop apps, de bancos de dados a frameworks modernos."
+          kicker="Stack"
+          title={<>As <span className="gold-gradient-text">paradas</span> que a gente usa.</>}
+          lead="As linguagens e ferramentas que rolam nos papos do Discord, nos projetos da galera e nas lives do IMPERA."
         />
 
         <div className="glass relative overflow-hidden rounded-xl">
