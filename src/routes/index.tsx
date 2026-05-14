@@ -429,11 +429,11 @@ function Content() {
 }
 
 const phases = [
-  { n: "01", t: "Aprender", d: "Fundamentos profundos. Estudo de sistemas, linguagens e teoria aplicada." },
-  { n: "02", t: "Construir", d: "Projetos reais, código de produção, decisões de engenharia." },
-  { n: "03", t: "Automatizar", d: "Eliminar repetição. Escrever ferramentas que multiplicam impacto." },
-  { n: "04", t: "Escalar", d: "Arquitetura distribuída, performance, sistemas que aguentam carga." },
-  { n: "05", t: "Dominar", d: "Mentoria, autoria técnica, contribuição para o ecossistema." },
+  { n: "01", t: "Aprender", d: "Estudar, ler doc, assistir live, fazer pergunta boba no Discord. Tudo conta." },
+  { n: "02", t: "Construir", d: "Sair da teoria. Abrir editor, escrever código, quebrar tudo, consertar." },
+  { n: "03", t: "Automatizar", d: "Achou que tá fazendo na mão duas vezes? Já era — vira script." },
+  { n: "04", t: "Escalar", d: "Quando o trem começa a aguentar carga de verdade, o jogo muda." },
+  { n: "05", t: "Dominar", d: "A partir daqui você ensina, contribui, abre PR e puxa a galera junto." },
 ];
 
 function Philosophy() {
@@ -441,9 +441,9 @@ function Philosophy() {
     <section id="filosofia" className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="Filosofia"
-          title={<>O caminho <span className="gold-gradient-text">Devstão.</span></>}
-          lead="Cinco fases que guiam todo membro da comunidade. Não é um curso — é uma trajetória."
+          kicker="O Caminho"
+          title={<>O jeito <span className="gold-gradient-text">Devstão</span> de evoluir.</>}
+          lead="Cinco fases que todo mundo passa. Não é roadmap travado, não é curso — é só o caminho natural de quem leva a sério."
         />
         <div className="relative">
           {/* vertical line */}
