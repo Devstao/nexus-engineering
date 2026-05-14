@@ -551,8 +551,8 @@ function Footer() {
               <span className="font-display text-2xl tracking-wide gold-gradient-text">Devstão</span>
             </div>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Comunidade fundada por <span className="text-gold">IMPERA</span>. Engenharia de software,
-              automação, arquitetura e cultura técnica avançada.
+              A trupe do <span className="text-gold">IMPERA</span>. Resenha técnica, código rolando,
+              projeto da galera e papo bom sobre dev.
             </p>
             <div className="mt-8 flex gap-3">
               {links.map((l) => (
