@@ -1,12 +1,24 @@
+import { HeroBackground } from "@/components/impera/HeroBackground";
+import { createFileRoute } from "@tanstack/react-router";
+import {
+  Activity,
+  ArrowUpRight,
+  Box,
+  Code2, Cpu,
+  Database,
+  GitBranch,
+  Github,
+  Layers,
+  Linkedin, Mail, MessageCircle,
+  Network,
+  Server,
+  Terminal,
+  Wrench,
+  Youtube,
+  Zap,
+} from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import { HeroBackground } from "@/components/impera/HeroBackground";
-import {
-  Code2, Cpu, Network, Wrench, GitBranch, Layers,
-  Github, Youtube, Linkedin, Mail, MessageCircle, ArrowUpRight,
-  Terminal, Zap, Database, Box, Server, Activity,
-} from "lucide-react";
-import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -501,7 +513,7 @@ function CTA() {
           <div className="relative">
             <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Bora junto?</div>
             <h2 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1] tracking-tight">
-              Cola na <span className="gold-gradient-text">Devstão.</span>
+              Cola no <span className="gold-gradient-text">Devstão.</span>
             </h2>
             <p className="mx-auto mt-7 max-w-xl text-lg text-muted-foreground">
               Sem prova, sem entrevista chata. Se você curte código e quer trocar ideia com quem
@@ -509,14 +521,15 @@ function CTA() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="#"
+                href="https://tr.ee/9Pooktcf5n"
+                
                 className="group inline-flex items-center gap-2.5 rounded-sm bg-gradient-to-b from-gold to-gold-deep px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-background glow-gold transition-transform hover:scale-[1.02]"
               >
-                Entrar no Discord
+                Entrar na comunidade
                 <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@RenatoIMPERA"
                 className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-gold"
               >
                 Ver o canal do IMPERA →
