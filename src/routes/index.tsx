@@ -85,7 +85,7 @@ function Hero() {
           className="mb-8 flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.4em] text-muted-foreground"
         >
           <span className="h-px w-10 bg-gold/40" />
-          <span>Fundada por <span className="text-gold">Impera</span></span>
+          <span>Trupe do <span className="text-gold">Impera</span></span>
           <span className="h-px w-10 bg-gold/40" />
         </motion.div>
 
@@ -104,8 +104,8 @@ function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mx-auto mt-10 max-w-2xl text-balance text-lg leading-relaxed text-foreground/85 sm:text-xl"
         >
-          A comunidade criada por <span className="text-gold">IMPERA</span> para desenvolvedores,
-          engenheiros e builders que constroem tecnologia em outro nível.
+          A resenha do <span className="text-gold">IMPERA</span> com a galera que curte código,
+          sistema operacional, terminal aberto e madrugada compilando.
         </motion.p>
 
         <motion.p
@@ -114,8 +114,8 @@ function Hero() {
           transition={{ duration: 1, delay: 0.85 }}
           className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground"
         >
-          Programação, automação, arquitetura de sistemas, engenharia de software e cultura
-          tecnológica avançada — em um ambiente exclusivo.
+          Conversa boa sobre programação, automação, arquitetura e os perrengues de quem vive
+          construindo coisa. Sem gurusagem, sem hype — só dev de verdade.
         </motion.p>
 
         <motion.div
