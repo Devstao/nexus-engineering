@@ -303,27 +303,27 @@ function Stack() {
 
 const projects = [
   {
-    name: "Aether Orchestrator",
-    cat: "Distributed Systems",
-    desc: "Plataforma de orquestração de agentes autônomos sobre infraestrutura híbrida.",
+    name: "Aether",
+    cat: "Side project",
+    desc: "Um orquestrador de agentes que começou como brincadeira no Discord e virou coisa séria.",
     tag: "Rust · Tokio",
   },
   {
     name: "Forge CLI",
-    cat: "Developer Tools",
-    desc: "Toolkit unificado de scaffolding, build e deploy para times de plataforma.",
+    cat: "Ferramenta",
+    desc: "CLI pra cuspir projeto novo do zero — feito por dev, pra dev cansado de boilerplate.",
     tag: "Go · TUI",
   },
   {
-    name: "Lumen Desktop",
-    cat: "Application",
-    desc: "Cliente desktop multiplataforma para automação e produtividade técnica.",
+    name: "Lumen",
+    cat: "App desktop",
+    desc: "App que automatiza as paradas chatas do dia a dia. Roda em tudo quanto é OS.",
     tag: "Tauri · React",
   },
   {
-    name: "Pulse Stream",
-    cat: "Data Engineering",
-    desc: "Engine de processamento de eventos em tempo real para sistemas de alta carga.",
+    name: "Pulse",
+    cat: "Engine",
+    desc: "Engine de eventos em tempo real que nasceu de um papo de madrugada na call.",
     tag: "Rust · Kafka",
   },
 ];
@@ -333,9 +333,9 @@ function Projects() {
     <section id="projetos" className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="Ecossistema"
-          title={<>Projetos construídos<br /><span className="gold-gradient-text">por membros.</span></>}
-          lead="Ferramentas reais, sistemas distribuídos, automações e produtos nascidos dentro da comunidade."
+          kicker="Os Projetos"
+          title={<>Coisa que a galera<br /><span className="gold-gradient-text">tá construindo.</span></>}
+          lead="Projeto que nasceu de ideia jogada no Discord, side project de fim de semana, ferramenta interna que virou open source. É isso aqui."
         />
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.map((p, i) => (
