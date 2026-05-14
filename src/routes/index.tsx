@@ -85,7 +85,7 @@ function Hero() {
           className="mb-8 flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.4em] text-muted-foreground"
         >
           <span className="h-px w-10 bg-gold/40" />
-          <span>Fundada por <span className="text-gold">Impera</span></span>
+          <span>Trupe do <span className="text-gold">Impera</span></span>
           <span className="h-px w-10 bg-gold/40" />
         </motion.div>
 
@@ -104,8 +104,8 @@ function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mx-auto mt-10 max-w-2xl text-balance text-lg leading-relaxed text-foreground/85 sm:text-xl"
         >
-          A comunidade criada por <span className="text-gold">IMPERA</span> para desenvolvedores,
-          engenheiros e builders que constroem tecnologia em outro nível.
+          A resenha do <span className="text-gold">IMPERA</span> com a galera que curte código,
+          sistema operacional, terminal aberto e madrugada compilando.
         </motion.p>
 
         <motion.p
@@ -114,8 +114,8 @@ function Hero() {
           transition={{ duration: 1, delay: 0.85 }}
           className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground"
         >
-          Programação, automação, arquitetura de sistemas, engenharia de software e cultura
-          tecnológica avançada — em um ambiente exclusivo.
+          Conversa boa sobre programação, automação, arquitetura e os perrengues de quem vive
+          construindo coisa. Sem gurusagem, sem hype — só dev de verdade.
         </motion.p>
 
         <motion.div
@@ -146,11 +146,11 @@ function Hero() {
           transition={{ duration: 1.5, delay: 1.4 }}
           className="mt-24 flex items-center justify-center gap-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70"
         >
-          <span>Acesso por convite</span>
+          <span>Entra na trupe</span>
           <span className="h-1 w-1 rounded-full bg-gold/50 animate-pulse-gold" />
-          <span>Network global</span>
+          <span>Resenha técnica</span>
           <span className="h-1 w-1 rounded-full bg-gold/50 animate-pulse-gold" />
-          <span>Engenharia de elite</span>
+          <span>Código rolando</span>
         </motion.div>
       </motion.div>
     </section>
@@ -180,21 +180,21 @@ function SectionLabel({ kicker, title, lead }: { kicker: string; title: React.Re
 
 function About() {
   const pillars = [
-    { icon: Code2, title: "Programadores avançados", desc: "Pessoas que pensam em sistemas, não em snippets." },
-    { icon: Cpu, title: "Engenheiros de software", desc: "Backend, fullstack, infraestrutura e plataformas." },
-    { icon: Wrench, title: "Especialistas em automação", desc: "Agentes, pipelines e orquestração de tarefas." },
-    { icon: Layers, title: "Builders de ferramentas", desc: "Devs que constroem o que outros devs usam." },
-    { icon: Network, title: "Arquitetos de sistemas", desc: "Performance, escalabilidade e desenho técnico." },
-    { icon: GitBranch, title: "Contribuidores open source", desc: "Cultura de código aberto e colaboração técnica." },
+    { icon: Code2, title: "Quem curte código", desc: "Gente que abre a IDE no fim de semana por gosto." },
+    { icon: Cpu, title: "Quem manja de back", desc: "Backend, fullstack, infra — o pessoal que faz funcionar." },
+    { icon: Wrench, title: "Quem automatiza tudo", desc: "Se dá pra script, dá pra automatizar. E a gente automatiza." },
+    { icon: Layers, title: "Quem constrói coisa", desc: "Builders, makers, devs que entregam projeto rodando." },
+    { icon: Network, title: "Quem pensa sistema", desc: "Arquitetura, performance, escala — papo de quem gosta." },
+    { icon: GitBranch, title: "Quem ama open source", desc: "PR aberta, repo no GitHub, contribuindo na comunidade." },
   ];
   return (
     <section id="sobre" className="relative py-32 sm:py-40">
       <div className="absolute inset-x-0 top-0 h-px gold-line opacity-30" />
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="A Comunidade"
-          title={<>Uma organização técnica<br /><span className="gold-gradient-text">de elite.</span></>}
-          lead="Devstão é um ecossistema curado de desenvolvedores que tratam engenharia como ofício. Aqui não há ruído de marketing — apenas pessoas construindo coisas reais."
+          kicker="A Trupe"
+          title={<>A galera que vive<br /><span className="gold-gradient-text">codando.</span></>}
+          lead="Devstão é a turma que o IMPERA juntou pra trocar ideia sobre código de verdade. Sem firula, sem papo de guru — só dev conversando com dev."
         />
         <div className="grid gap-px overflow-hidden rounded-lg border border-border/60 bg-border/40 sm:grid-cols-2 lg:grid-cols-3">
           {pillars.map((p, i) => (
@@ -245,9 +245,9 @@ function Stack() {
       <div className="absolute inset-0 bg-grid-fine [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]" />
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="Stack Técnica"
-          title={<>O <span className="gold-gradient-text">arsenal</span> da comunidade.</>}
-          lead="Tecnologias que dominamos, discutimos e construímos. De systems programming a desktop apps, de bancos de dados a frameworks modernos."
+          kicker="Stack"
+          title={<>As <span className="gold-gradient-text">paradas</span> que a gente usa.</>}
+          lead="As linguagens e ferramentas que rolam nos papos do Discord, nos projetos da galera e nas lives do IMPERA."
         />
 
         <div className="glass relative overflow-hidden rounded-xl">
@@ -259,9 +259,9 @@ function Stack() {
               <span className="h-2.5 w-2.5 rounded-full bg-gold" />
             </div>
             <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              devstao://stack — active
+              devstao://stack — rodando
             </div>
-            <div className="font-mono text-[10px] text-gold animate-pulse-gold">● live</div>
+            <div className="font-mono text-[10px] text-gold animate-pulse-gold">● online</div>
           </div>
 
           <div className="grid gap-px bg-border/30 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -293,7 +293,7 @@ function Stack() {
           </div>
 
           <div className="border-t border-border/50 bg-black/40 px-5 py-3 font-mono text-[10px] tracking-wider text-muted-foreground">
-            <span className="text-gold">$</span> devstao --members 4.2k --active 87% --uptime ∞
+            <span className="text-gold">$</span> devstao --galera 4.2k --online agora --resenha 24/7
           </div>
         </div>
       </div>
@@ -303,27 +303,27 @@ function Stack() {
 
 const projects = [
   {
-    name: "Aether Orchestrator",
-    cat: "Distributed Systems",
-    desc: "Plataforma de orquestração de agentes autônomos sobre infraestrutura híbrida.",
+    name: "Aether",
+    cat: "Side project",
+    desc: "Um orquestrador de agentes que começou como brincadeira no Discord e virou coisa séria.",
     tag: "Rust · Tokio",
   },
   {
     name: "Forge CLI",
-    cat: "Developer Tools",
-    desc: "Toolkit unificado de scaffolding, build e deploy para times de plataforma.",
+    cat: "Ferramenta",
+    desc: "CLI pra cuspir projeto novo do zero — feito por dev, pra dev cansado de boilerplate.",
     tag: "Go · TUI",
   },
   {
-    name: "Lumen Desktop",
-    cat: "Application",
-    desc: "Cliente desktop multiplataforma para automação e produtividade técnica.",
+    name: "Lumen",
+    cat: "App desktop",
+    desc: "App que automatiza as paradas chatas do dia a dia. Roda em tudo quanto é OS.",
     tag: "Tauri · React",
   },
   {
-    name: "Pulse Stream",
-    cat: "Data Engineering",
-    desc: "Engine de processamento de eventos em tempo real para sistemas de alta carga.",
+    name: "Pulse",
+    cat: "Engine",
+    desc: "Engine de eventos em tempo real que nasceu de um papo de madrugada na call.",
     tag: "Rust · Kafka",
   },
 ];
@@ -333,9 +333,9 @@ function Projects() {
     <section id="projetos" className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="Ecossistema"
-          title={<>Projetos construídos<br /><span className="gold-gradient-text">por membros.</span></>}
-          lead="Ferramentas reais, sistemas distribuídos, automações e produtos nascidos dentro da comunidade."
+          kicker="Os Projetos"
+          title={<>Coisa que a galera<br /><span className="gold-gradient-text">tá construindo.</span></>}
+          lead="Projeto que nasceu de ideia jogada no Discord, side project de fim de semana, ferramenta interna que virou open source. É isso aqui."
         />
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.map((p, i) => (
@@ -377,12 +377,12 @@ function Projects() {
 }
 
 const content = [
-  { tag: "Vídeo", title: "Arquitetura de sistemas distribuídos", meta: "IMPERA · 42 min" },
-  { tag: "Artigo", title: "Engenharia reversa de binários modernos", meta: "Devstão Lab · 18 min" },
-  { tag: "Tutorial", title: "Construindo um runtime em Rust do zero", meta: "Série · 6 partes" },
-  { tag: "Desafio", title: "Implementar um scheduler cooperativo", meta: "Open · 312 inscritos" },
-  { tag: "Discussão", title: "Como times de elite escalam infraestrutura", meta: "Live · Quartas" },
-  { tag: "Automação", title: "Agentes autônomos em produção", meta: "Workshop · Avançado" },
+  { tag: "Vídeo", title: "Como funciona sistema distribuído na prática", meta: "IMPERA · 42 min" },
+  { tag: "Artigo", title: "Brincando de engenharia reversa em binário", meta: "Blog · 18 min" },
+  { tag: "Tutorial", title: "Fazendo um runtime em Rust no braço", meta: "Série · 6 partes" },
+  { tag: "Desafio", title: "Bora implementar um scheduler do zero?", meta: "Open · 312 topam" },
+  { tag: "Live", title: "Resenha sobre infra que aguenta porrada", meta: "Toda quarta · 21h" },
+  { tag: "Workshop", title: "Botando agente autônomo pra rodar", meta: "Mão na massa · Avançado" },
 ];
 
 function Content() {
@@ -392,8 +392,8 @@ function Content() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
           kicker="Conteúdo"
-          title={<>Hub de <span className="gold-gradient-text">conhecimento</span> técnico.</>}
-          lead="Material curado por IMPERA e por membros — tutoriais avançados, engenharia reversa, arquitetura, e discussões de alto nível."
+          title={<>O que rola por <span className="gold-gradient-text">aqui.</span></>}
+          lead="Vídeo do IMPERA, artigo da galera, live de quarta, desafio aberto, workshop de fim de semana. Sempre tem coisa boa rolando."
         />
         <div className="grid gap-px overflow-hidden rounded-xl border border-border/60 bg-border/40 md:grid-cols-2 lg:grid-cols-3">
           {content.map((c, i) => (
@@ -429,11 +429,11 @@ function Content() {
 }
 
 const phases = [
-  { n: "01", t: "Aprender", d: "Fundamentos profundos. Estudo de sistemas, linguagens e teoria aplicada." },
-  { n: "02", t: "Construir", d: "Projetos reais, código de produção, decisões de engenharia." },
-  { n: "03", t: "Automatizar", d: "Eliminar repetição. Escrever ferramentas que multiplicam impacto." },
-  { n: "04", t: "Escalar", d: "Arquitetura distribuída, performance, sistemas que aguentam carga." },
-  { n: "05", t: "Dominar", d: "Mentoria, autoria técnica, contribuição para o ecossistema." },
+  { n: "01", t: "Aprender", d: "Estudar, ler doc, assistir live, fazer pergunta boba no Discord. Tudo conta." },
+  { n: "02", t: "Construir", d: "Sair da teoria. Abrir editor, escrever código, quebrar tudo, consertar." },
+  { n: "03", t: "Automatizar", d: "Achou que tá fazendo na mão duas vezes? Já era — vira script." },
+  { n: "04", t: "Escalar", d: "Quando o trem começa a aguentar carga de verdade, o jogo muda." },
+  { n: "05", t: "Dominar", d: "A partir daqui você ensina, contribui, abre PR e puxa a galera junto." },
 ];
 
 function Philosophy() {
@@ -441,9 +441,9 @@ function Philosophy() {
     <section id="filosofia" className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="Filosofia"
-          title={<>O caminho <span className="gold-gradient-text">Devstão.</span></>}
-          lead="Cinco fases que guiam todo membro da comunidade. Não é um curso — é uma trajetória."
+          kicker="O Caminho"
+          title={<>O jeito <span className="gold-gradient-text">Devstão</span> de evoluir.</>}
+          lead="Cinco fases que todo mundo passa. Não é roadmap travado, não é curso — é só o caminho natural de quem leva a sério."
         />
         <div className="relative">
           {/* vertical line */}
@@ -499,26 +499,27 @@ function CTA() {
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)] opacity-60" />
           <div className="absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
           <div className="relative">
-            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Acesso por convite</div>
+            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Bora junto?</div>
             <h2 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1] tracking-tight">
-              Construa <span className="gold-gradient-text">em outro nível.</span>
+              Cola na <span className="gold-gradient-text">Devstão.</span>
             </h2>
             <p className="mx-auto mt-7 max-w-xl text-lg text-muted-foreground">
-              Aplique para participar da Devstão. Curadoria feita por IMPERA e pelo núcleo da comunidade.
+              Sem prova, sem entrevista chata. Se você curte código e quer trocar ideia com quem
+              também curte, tá no lugar certo.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#"
                 className="group inline-flex items-center gap-2.5 rounded-sm bg-gradient-to-b from-gold to-gold-deep px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-background glow-gold transition-transform hover:scale-[1.02]"
               >
-                Solicitar Acesso
+                Entrar no Discord
                 <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href="#"
                 className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-gold"
               >
-                Ver requisitos →
+                Ver o canal do IMPERA →
               </a>
             </div>
           </div>
@@ -550,8 +551,8 @@ function Footer() {
               <span className="font-display text-2xl tracking-wide gold-gradient-text">Devstão</span>
             </div>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Comunidade fundada por <span className="text-gold">IMPERA</span>. Engenharia de software,
-              automação, arquitetura e cultura técnica avançada.
+              A trupe do <span className="text-gold">IMPERA</span>. Resenha técnica, código rolando,
+              projeto da galera e papo bom sobre dev.
             </p>
             <div className="mt-8 flex gap-3">
               {links.map((l) => (
@@ -577,20 +578,20 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">Comunidade</div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">A Trupe</div>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="transition-colors hover:text-gold">Solicitar acesso</a></li>
-              <li><a href="#" className="transition-colors hover:text-gold">Código de conduta</a></li>
+              <li><a href="#" className="transition-colors hover:text-gold">Entrar no Discord</a></li>
+              <li><a href="#" className="transition-colors hover:text-gold">Como funciona</a></li>
               <li><a href="#" className="transition-colors hover:text-gold">Manifesto</a></li>
-              <li><a href="#" className="transition-colors hover:text-gold">Contato</a></li>
+              <li><a href="#" className="transition-colors hover:text-gold">Fala com a gente</a></li>
             </ul>
           </div>
         </div>
         <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-border/40 pt-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70 sm:flex-row sm:items-center">
-          <div>© {new Date().getFullYear()} Devstão · Fundada por IMPERA</div>
+          <div>© {new Date().getFullYear()} Devstão · feito pela trupe do IMPERA</div>
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold" />
-            Sistema operacional · v1.0
+            no ar e codando
           </div>
         </div>
       </div>
