@@ -180,21 +180,21 @@ function SectionLabel({ kicker, title, lead }: { kicker: string; title: React.Re
 
 function About() {
   const pillars = [
-    { icon: Code2, title: "Programadores avançados", desc: "Pessoas que pensam em sistemas, não em snippets." },
-    { icon: Cpu, title: "Engenheiros de software", desc: "Backend, fullstack, infraestrutura e plataformas." },
-    { icon: Wrench, title: "Especialistas em automação", desc: "Agentes, pipelines e orquestração de tarefas." },
-    { icon: Layers, title: "Builders de ferramentas", desc: "Devs que constroem o que outros devs usam." },
-    { icon: Network, title: "Arquitetos de sistemas", desc: "Performance, escalabilidade e desenho técnico." },
-    { icon: GitBranch, title: "Contribuidores open source", desc: "Cultura de código aberto e colaboração técnica." },
+    { icon: Code2, title: "Quem curte código", desc: "Gente que abre a IDE no fim de semana por gosto." },
+    { icon: Cpu, title: "Quem manja de back", desc: "Backend, fullstack, infra — o pessoal que faz funcionar." },
+    { icon: Wrench, title: "Quem automatiza tudo", desc: "Se dá pra script, dá pra automatizar. E a gente automatiza." },
+    { icon: Layers, title: "Quem constrói coisa", desc: "Builders, makers, devs que entregam projeto rodando." },
+    { icon: Network, title: "Quem pensa sistema", desc: "Arquitetura, performance, escala — papo de quem gosta." },
+    { icon: GitBranch, title: "Quem ama open source", desc: "PR aberta, repo no GitHub, contribuindo na comunidade." },
   ];
   return (
     <section id="sobre" className="relative py-32 sm:py-40">
       <div className="absolute inset-x-0 top-0 h-px gold-line opacity-30" />
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="A Comunidade"
-          title={<>Uma organização técnica<br /><span className="gold-gradient-text">de elite.</span></>}
-          lead="Devstão é um ecossistema curado de desenvolvedores que tratam engenharia como ofício. Aqui não há ruído de marketing — apenas pessoas construindo coisas reais."
+          kicker="A Trupe"
+          title={<>A galera que vive<br /><span className="gold-gradient-text">codando.</span></>}
+          lead="Devstão é a turma que o IMPERA juntou pra trocar ideia sobre código de verdade. Sem firula, sem papo de guru — só dev conversando com dev."
         />
         <div className="grid gap-px overflow-hidden rounded-lg border border-border/60 bg-border/40 sm:grid-cols-2 lg:grid-cols-3">
           {pillars.map((p, i) => (
