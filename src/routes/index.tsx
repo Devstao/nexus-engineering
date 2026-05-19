@@ -271,7 +271,7 @@ function Stack() {
               <span className="h-2.5 w-2.5 rounded-full bg-gold" />
             </div>
             <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              devstao://stack — rodando
+              devstao://stack — ativo
             </div>
             <div className="font-mono text-[10px] text-gold animate-pulse-gold">● online</div>
           </div>
