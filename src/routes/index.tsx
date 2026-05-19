@@ -591,12 +591,12 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">A Trupe</div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">Comunidade</div>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
               <li><a href="#" className="transition-colors hover:text-gold">Entrar no Discord</a></li>
               <li><a href="#" className="transition-colors hover:text-gold">Como funciona</a></li>
               <li><a href="#" className="transition-colors hover:text-gold">Manifesto</a></li>
-              <li><a href="#" className="transition-colors hover:text-gold">Fala com a gente</a></li>
+              <li><a href="#" className="transition-colors hover:text-gold">Contato</a></li>
             </ul>
           </div>
         </div>
