@@ -116,8 +116,8 @@ function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mx-auto mt-10 max-w-2xl text-balance text-lg leading-relaxed text-foreground/85 sm:text-xl"
         >
-          A resenha do <span className="text-gold">IMPERA</span> com a galera que curte código,
-          sistema operacional, terminal aberto e madrugada compilando.
+          A comunidade do <span className="text-gold">IMPERA</span> para quem leva código a sério —
+          sem perder a leveza de quem vive o terminal por gosto.
         </motion.p>
 
         <motion.p
@@ -126,8 +126,8 @@ function Hero() {
           transition={{ duration: 1, delay: 0.85 }}
           className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground"
         >
-          Conversa boa sobre programação, automação, arquitetura e os perrengues de quem vive
-          construindo coisa. Sem gurusagem, sem hype — só dev de verdade.
+          Engenharia de software, automação e arquitetura discutidas com profundidade técnica —
+          e a resenha boa de quem constrói junto. Sem hype, sem gurusagem.
         </motion.p>
 
         <motion.div
