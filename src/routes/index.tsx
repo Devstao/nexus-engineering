@@ -389,12 +389,12 @@ function Projects() {
 }
 
 const content = [
-  { tag: "Vídeo", title: "Como funciona sistema distribuído na prática", meta: "IMPERA · 42 min" },
-  { tag: "Artigo", title: "Brincando de engenharia reversa em binário", meta: "Blog · 18 min" },
-  { tag: "Tutorial", title: "Fazendo um runtime em Rust no braço", meta: "Série · 6 partes" },
-  { tag: "Desafio", title: "Bora implementar um scheduler do zero?", meta: "Open · 312 topam" },
-  { tag: "Live", title: "Resenha sobre infra que aguenta porrada", meta: "Toda quarta · 21h" },
-  { tag: "Workshop", title: "Botando agente autônomo pra rodar", meta: "Mão na massa · Avançado" },
+  { tag: "Vídeo", title: "Como funciona um sistema distribuído na prática", meta: "IMPERA · 42 min" },
+  { tag: "Artigo", title: "Engenharia reversa em binários: um estudo prático", meta: "Blog · 18 min" },
+  { tag: "Tutorial", title: "Construindo um runtime em Rust do zero", meta: "Série · 6 partes" },
+  { tag: "Desafio", title: "Implementando um scheduler do zero", meta: "Aberto · 312 inscritos" },
+  { tag: "Live", title: "Discussão aberta: infraestrutura sob pressão", meta: "Toda quarta · 21h" },
+  { tag: "Workshop", title: "Colocando um agente autônomo em produção", meta: "Hands-on · Avançado" },
 ];
 
 function Content() {
