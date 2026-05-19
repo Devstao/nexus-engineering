@@ -511,13 +511,13 @@ function CTA() {
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)] opacity-60" />
           <div className="absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
           <div className="relative">
-            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Bora junto?</div>
+            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Faça parte</div>
             <h2 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1] tracking-tight">
-              Cola no <span className="gold-gradient-text">Devstão.</span>
+              Entre para a <span className="gold-gradient-text">Devstão.</span>
             </h2>
             <p className="mx-auto mt-7 max-w-xl text-lg text-muted-foreground">
-              Sem prova, sem entrevista chata. Se você curte código e quer trocar ideia com quem
-              também curte, tá no lugar certo.
+              Sem processo seletivo. Se você constrói, estuda e quer trocar ideia com gente
+              do mesmo nível, o lugar é aqui.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
