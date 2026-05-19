@@ -158,11 +158,11 @@ function Hero() {
           transition={{ duration: 1.5, delay: 1.4 }}
           className="mt-24 flex items-center justify-center gap-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70"
         >
-          <span>Entra na trupe</span>
+          <span>Comunidade ativa</span>
           <span className="h-1 w-1 rounded-full bg-gold/50 animate-pulse-gold" />
-          <span>Resenha técnica</span>
+          <span>Discussões técnicas</span>
           <span className="h-1 w-1 rounded-full bg-gold/50 animate-pulse-gold" />
-          <span>Código rolando</span>
+          <span>Projetos em produção</span>
         </motion.div>
       </motion.div>
     </section>
