@@ -601,10 +601,10 @@ function Footer() {
           </div>
         </div>
         <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-border/40 pt-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70 sm:flex-row sm:items-center">
-          <div>© {new Date().getFullYear()} Devstão · feito pela trupe do IMPERA</div>
+          <div>© {new Date().getFullYear()} Devstão · comunidade criada por IMPERA</div>
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold" />
-            no ar e codando
+            sistema online
           </div>
         </div>
       </div>
