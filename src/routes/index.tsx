@@ -404,8 +404,8 @@ function Content() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
           kicker="Conteúdo"
-          title={<>O que rola por <span className="gold-gradient-text">aqui.</span></>}
-          lead="Vídeo do IMPERA, artigo da galera, live de quarta, desafio aberto, workshop de fim de semana. Sempre tem coisa boa rolando."
+          title={<>O que circula <span className="gold-gradient-text">por aqui.</span></>}
+          lead="Conteúdo técnico do IMPERA, artigos dos membros, lives semanais, desafios abertos e workshops avançados. Material novo entrando toda semana."
         />
         <div className="grid gap-px overflow-hidden rounded-xl border border-border/60 bg-border/40 md:grid-cols-2 lg:grid-cols-3">
           {content.map((c, i) => (
