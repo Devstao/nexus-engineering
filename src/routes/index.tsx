@@ -454,8 +454,8 @@ function Philosophy() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
           kicker="O Caminho"
-          title={<>O jeito <span className="gold-gradient-text">Devstão</span> de evoluir.</>}
-          lead="Cinco fases que todo mundo passa. Não é roadmap travado, não é curso — é só o caminho natural de quem leva a sério."
+          title={<>O caminho <span className="gold-gradient-text">Devstão</span>.</>}
+          lead="Cinco fases que todo engenheiro percorre. Não é roadmap fechado nem curso — é a trajetória natural de quem leva a profissão a sério."
         />
         <div className="relative">
           {/* vertical line */}
