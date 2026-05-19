@@ -148,7 +148,7 @@ function Hero() {
             href="#projetos"
             className="inline-flex items-center gap-2.5 rounded-sm border border-gold/25 px-7 py-3.5 font-mono text-xs uppercase tracking-[0.22em] text-foreground/90 transition-all hover:border-gold/60 hover:bg-gold/5"
           >
-            Explorar o Ecossistema
+            Conhecer o Ecossistema
           </a>
         </motion.div>
 
