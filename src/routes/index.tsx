@@ -258,8 +258,8 @@ function Stack() {
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionLabel
           kicker="Stack"
-          title={<>As <span className="gold-gradient-text">paradas</span> que a gente usa.</>}
-          lead="As linguagens e ferramentas que rolam nos papos do Discord, nos projetos da galera e nas lives do IMPERA."
+          title={<>O <span className="gold-gradient-text">arsenal</span> em uso.</>}
+          lead="As linguagens e ferramentas que aparecem nas discussões do Discord, nos projetos dos membros e nas lives técnicas do IMPERA."
         />
 
         <div className="glass relative overflow-hidden rounded-xl">
