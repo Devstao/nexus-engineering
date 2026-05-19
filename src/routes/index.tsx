@@ -441,11 +441,11 @@ function Content() {
 }
 
 const phases = [
-  { n: "01", t: "Aprender", d: "Estudar, ler doc, assistir live, fazer pergunta boba no Discord. Tudo conta." },
-  { n: "02", t: "Construir", d: "Sair da teoria. Abrir editor, escrever código, quebrar tudo, consertar." },
-  { n: "03", t: "Automatizar", d: "Achou que tá fazendo na mão duas vezes? Já era — vira script." },
-  { n: "04", t: "Escalar", d: "Quando o trem começa a aguentar carga de verdade, o jogo muda." },
-  { n: "05", t: "Dominar", d: "A partir daqui você ensina, contribui, abre PR e puxa a galera junto." },
+  { n: "01", t: "Aprender", d: "Estudar com profundidade — documentação, código-fonte, lives, perguntas no Discord. Curiosidade é o ponto de partida." },
+  { n: "02", t: "Construir", d: "Sair da teoria. Abrir o editor, escrever código, quebrar, depurar e entender de verdade." },
+  { n: "03", t: "Automatizar", d: "Identificar o que se repete e transformar em script, pipeline ou ferramenta. Trabalho manual é falha de design." },
+  { n: "04", t: "Escalar", d: "Quando o sistema começa a sustentar carga real, a engenharia muda — performance, observabilidade e arquitetura entram em cena." },
+  { n: "05", t: "Dominar", d: "Ensinar, contribuir com open source e puxar a comunidade junto. Conhecimento que circula é conhecimento que dura." },
 ];
 
 function Philosophy() {
