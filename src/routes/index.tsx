@@ -564,8 +564,8 @@ function Footer() {
               <span className="font-display text-2xl tracking-wide gold-gradient-text">Devstão</span>
             </div>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              A trupe do <span className="text-gold">IMPERA</span>. Resenha técnica, código rolando,
-              projeto da galera e papo bom sobre dev.
+              A comunidade do <span className="text-gold">IMPERA</span>. Engenharia de software,
+              discussão técnica densa e projetos construídos em conjunto.
             </p>
             <div className="mt-8 flex gap-3">
               {links.map((l) => (
