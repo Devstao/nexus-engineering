@@ -305,7 +305,7 @@ function Stack() {
           </div>
 
           <div className="border-t border-border/50 bg-black/40 px-5 py-3 font-mono text-[10px] tracking-wider text-muted-foreground">
-            <span className="text-gold">$</span> devstao --galera 4.2k --online agora --resenha 24/7
+            <span className="text-gold">$</span> devstao --membros 4.2k --online 312 --uptime 24/7
           </div>
         </div>
       </div>
