@@ -317,25 +317,25 @@ const projects = [
   {
     name: "Aether",
     cat: "Side project",
-    desc: "Um orquestrador de agentes que começou como brincadeira no Discord e virou coisa séria.",
+    desc: "Orquestrador de agentes que começou como experimento no Discord e virou plataforma real, mantida pela comunidade.",
     tag: "Rust · Tokio",
   },
   {
     name: "Forge CLI",
     cat: "Ferramenta",
-    desc: "CLI pra cuspir projeto novo do zero — feito por dev, pra dev cansado de boilerplate.",
+    desc: "CLI de scaffolding para projetos novos — feita por devs cansados de repetir boilerplate em cada início de stack.",
     tag: "Go · TUI",
   },
   {
     name: "Lumen",
     cat: "App desktop",
-    desc: "App que automatiza as paradas chatas do dia a dia. Roda em tudo quanto é OS.",
+    desc: "Aplicativo cross-platform que automatiza fluxos repetitivos do dia a dia técnico. Roda em Linux, macOS e Windows.",
     tag: "Tauri · React",
   },
   {
     name: "Pulse",
     cat: "Engine",
-    desc: "Engine de eventos em tempo real que nasceu de um papo de madrugada na call.",
+    desc: "Engine de eventos em tempo real nascida de uma discussão de arquitetura entre membros da comunidade.",
     tag: "Rust · Kafka",
   },
 ];
