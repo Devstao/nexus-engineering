@@ -97,7 +97,7 @@ function Hero() {
           className="mb-8 flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.4em] text-muted-foreground"
         >
           <span className="h-px w-10 bg-gold/40" />
-          <span>Trupe do <span className="text-gold">Impera</span></span>
+          <span>Comunidade do <span className="text-gold">Impera</span></span>
           <span className="h-px w-10 bg-gold/40" />
         </motion.div>
 
