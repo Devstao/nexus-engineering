@@ -532,7 +532,7 @@ function CTA() {
                 href="https://youtube.com/@RenatoIMPERA"
                 className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-gold"
               >
-                Ver o canal do IMPERA →
+                Conhecer o canal do IMPERA →
               </a>
             </div>
           </div>
