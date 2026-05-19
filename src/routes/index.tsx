@@ -192,21 +192,21 @@ function SectionLabel({ kicker, title, lead }: { kicker: string; title: React.Re
 
 function About() {
   const pillars = [
-    { icon: Code2, title: "Quem curte código", desc: "Gente que abre a IDE no fim de semana por gosto." },
-    { icon: Cpu, title: "Quem manja de back", desc: "Backend, fullstack, infra — o pessoal que faz funcionar." },
-    { icon: Wrench, title: "Quem automatiza tudo", desc: "Se dá pra script, dá pra automatizar. E a gente automatiza." },
-    { icon: Layers, title: "Quem constrói coisa", desc: "Builders, makers, devs que entregam projeto rodando." },
-    { icon: Network, title: "Quem pensa sistema", desc: "Arquitetura, performance, escala — papo de quem gosta." },
-    { icon: GitBranch, title: "Quem ama open source", desc: "PR aberta, repo no GitHub, contribuindo na comunidade." },
+    { icon: Code2, title: "Quem vive de código", desc: "Devs que abrem a IDE no fim de semana — porque querem, não porque precisam." },
+    { icon: Cpu, title: "Engenharia de back-end", desc: "Backend, fullstack e infra. Quem garante que o sistema fica de pé." },
+    { icon: Wrench, title: "Automação de verdade", desc: "Se dá pra scriptar, vira script. Trabalho repetitivo é problema de design." },
+    { icon: Layers, title: "Builders e makers", desc: "Pessoas que entregam projeto rodando — não só ideia em apresentação." },
+    { icon: Network, title: "Pensamento sistêmico", desc: "Arquitetura, performance e escala discutidas com a profundidade que merecem." },
+    { icon: GitBranch, title: "Cultura open source", desc: "PR aberta, repo público, contribuição contínua. Comunidade construindo junto." },
   ];
   return (
     <section id="sobre" className="relative py-32 sm:py-40">
       <div className="absolute inset-x-0 top-0 h-px gold-line opacity-30" />
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="A Trupe"
-          title={<>A galera que vive<br /><span className="gold-gradient-text">codando.</span></>}
-          lead="Devstão é a turma que o IMPERA juntou pra trocar ideia sobre código de verdade. Sem firula, sem papo de guru — só dev conversando com dev."
+          kicker="A Comunidade"
+          title={<>Quem está<br /><span className="gold-gradient-text">construindo junto.</span></>}
+          lead="Devstão é o espaço que o IMPERA criou para devs que levam o ofício a sério — discussão técnica densa, sem a formalidade de um ambiente corporativo."
         />
         <div className="grid gap-px overflow-hidden rounded-lg border border-border/60 bg-border/40 sm:grid-cols-2 lg:grid-cols-3">
           {pillars.map((p, i) => (
