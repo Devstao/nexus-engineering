@@ -345,9 +345,9 @@ function Projects() {
     <section id="projetos" className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel
-          kicker="Os Projetos"
-          title={<>Coisa que a galera<br /><span className="gold-gradient-text">tá construindo.</span></>}
-          lead="Projeto que nasceu de ideia jogada no Discord, side project de fim de semana, ferramenta interna que virou open source. É isso aqui."
+          kicker="Projetos"
+          title={<>O que está sendo<br /><span className="gold-gradient-text">construído.</span></>}
+          lead="Side projects que viraram open source, ferramentas internas que ganharam tração, experimentos técnicos discutidos a fundo. Tudo nasce dentro da comunidade."
         />
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.map((p, i) => (
