@@ -72,9 +72,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#050505" },
-      { title: "Devstão — fundada por IMPERA" },
-      { name: "description", content: "Comunidade de elite para desenvolvedores, engenheiros e builders. Fundada por IMPERA." },
+      { name: "theme-color", content: "#07090d" },
+      { title: "Devstão — comunidade técnica do IMPERA" },
+      { name: "description", content: "Comunidade developer-centric do IMPERA. Linux, programação, IA, embarcados, cibersegurança, Bitcoin, infraestrutura e open source." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Devstão" },
     ],
@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap",
       },
       { rel: "stylesheet", href: appCss },
     ],
