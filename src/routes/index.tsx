@@ -1,36 +1,44 @@
-import { HeroBackground } from "@/components/impera/HeroBackground";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Activity,
   ArrowUpRight,
-  Box,
-  Code2, Cpu,
+  Bitcoin,
+  Boxes,
+  Brain,
+  Cloud,
+  Cpu,
   Database,
   GitBranch,
   Github,
+  HardDrive,
   Layers,
-  Linkedin, Mail, MessageCircle,
+  Lock,
+  MessageCircle,
   Network,
+  Radio,
+  Router,
   Server,
+  ShieldCheck,
   Terminal,
-  Wrench,
+  TerminalSquare,
+  Workflow,
   Youtube,
   Zap,
 } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Devstão — A comunidade de elite criada por IMPERA" },
+      { title: "Devstão — comunidade técnica do IMPERA" },
       {
         name: "description",
         content:
-          "Devstão é a comunidade fundada por IMPERA para desenvolvedores, engenheiros e builders que constroem tecnologia em outro nível.",
+          "Comunidade developer-centric do IMPERA. Linux, programação, IA, embarcados, cibersegurança, Bitcoin, infraestrutura e open source.",
       },
-      { property: "og:title", content: "Devstão — fundada por IMPERA" },
-      { property: "og:description", content: "Engenharia de software avançada, automação e arquitetura em uma comunidade exclusiva." },
+      { property: "og:title", content: "Devstão · IMPERA" },
+      { property: "og:description", content: "Comunidade técnica para devs, sysadmins e engenheiros de infraestrutura." },
       { property: "og:type", content: "website" },
     ],
   }),
@@ -38,195 +46,343 @@ export const Route = createFileRoute("/")({
 });
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 18 },
   show: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
+/* -------------------- NAV -------------------- */
 function Nav() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#07090d]/60 border-b border-border/40">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-14">
         <a href="#" className="flex items-center gap-2.5">
-          <div className="relative h-7 w-7">
-            <div className="absolute inset-0 rotate-45 border border-gold/60" />
-            <div className="absolute inset-1.5 rotate-45 bg-gradient-to-br from-gold to-gold-deep" />
+          <div className="relative h-6 w-6">
+            <div className="absolute inset-0 rounded-[5px] bg-gradient-to-br from-electric to-violet glow-blue" />
+            <div className="absolute inset-[3px] rounded-[3px] bg-[#0a0d12] flex items-center justify-center">
+              <span className="font-mono text-[10px] font-bold text-electric">D</span>
+            </div>
           </div>
-          <span className="font-display text-xl tracking-wide gold-gradient-text">Devstão</span>
-          <span className="ml-2 hidden font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
-            by Impera
+          <span className="font-mono text-sm tracking-tight text-foreground">
+            devstão
+            <span className="text-electric">_</span>
+          </span>
+          <span className="ml-3 hidden sm:inline font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+            by impera
           </span>
         </a>
-        <nav className="hidden items-center gap-9 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
-          <a href="#sobre" className="transition-colors hover:text-gold">Sobre</a>
-          <a href="#stack" className="transition-colors hover:text-gold">Stack</a>
-          <a href="#projetos" className="transition-colors hover:text-gold">Projetos</a>
-          <a href="#conteudo" className="transition-colors hover:text-gold">Conteúdo</a>
-          <a href="#filosofia" className="transition-colors hover:text-gold">Filosofia</a>
+        <nav className="hidden md:flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          <a href="#categorias" className="hover:text-electric transition-colors">categorias</a>
+          <a href="#stack" className="hover:text-electric transition-colors">stack</a>
+          <a href="#projetos" className="hover:text-electric transition-colors">projetos</a>
+          <a href="#observability" className="hover:text-electric transition-colors">telemetria</a>
+          <a href="#conteudo" className="hover:text-electric transition-colors">conteúdo</a>
         </nav>
         <a
           href="#join"
-          className="group relative inline-flex items-center gap-2 rounded-sm border border-gold/30 bg-gold/5 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-gold transition-all hover:border-gold/60 hover:bg-gold/10"
+          className="group inline-flex items-center gap-2 rounded-md border border-electric/30 bg-electric/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-electric hover:bg-electric/15 hover:border-electric/60 transition-all"
         >
-          Entrar
-          <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          entrar
+          <span className="text-[9px] opacity-60 caret">_</span>
         </a>
       </div>
-      <div className="mx-auto h-px max-w-7xl gold-line opacity-40" />
     </header>
   );
 }
 
+/* -------------------- HERO (TERMINAL) -------------------- */
 function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const lines = [
+    { tag: "INFO", color: "text-muted-foreground", text: "booting devstão_env v4.2.1 // impera_core" },
+    { tag: "OK", color: "text-emerald", text: "kernel: linux-6.10  ·  shell: zsh  ·  multiplexer: tmux" },
+    { tag: "OK", color: "text-emerald", text: "loaded modules: programação · infra · ia · cybersec · bitcoin" },
+    { tag: "INFO", color: "text-muted-foreground", text: "peers online: 1.248  ·  channels: 42  ·  latency: 12ms" },
+    { tag: "READY", color: "text-electric", text: "welcome to the production environment." },
+  ];
+
+  const [typed, setTyped] = useState("");
+  const target = "join community --force";
+  useEffect(() => {
+    let i = 0;
+    const id = setInterval(() => {
+      i++;
+      setTyped(target.slice(0, i));
+      if (i >= target.length) clearInterval(id);
+    }, 55);
+    return () => clearInterval(id);
+  }, []);
 
   return (
-    <section ref={ref} className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      <HeroBackground />
-      <motion.div style={{ y, opacity }} className="relative z-10 mx-auto max-w-6xl px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mb-8 flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.4em] text-muted-foreground"
-        >
-          <span className="h-px w-10 bg-gold/40" />
-          <span>Comunidade do <span className="text-gold">Impera</span></span>
-          <span className="h-px w-10 bg-gold/40" />
-        </motion.div>
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-app">
+      <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
+      <div className="absolute top-0 left-0 right-0 h-px hr-electric opacity-40" />
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30, filter: "blur(20px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-[clamp(5rem,18vw,16rem)] font-light leading-[0.9] tracking-tight"
-        >
-          <span className="gold-gradient-text">Devstão</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="mx-auto mt-10 max-w-2xl text-balance text-lg leading-relaxed text-foreground/85 sm:text-xl"
-        >
-          A comunidade do <span className="text-gold">IMPERA</span> para quem leva código a sério —
-          sem perder a leveza de quem vive o terminal por gosto.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.85 }}
-          className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground"
-        >
-          Engenharia de software, automação e arquitetura discutidas com profundidade técnica —
-          e a resenha boa de quem constrói junto. Sem hype, sem gurusagem.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
-        >
-          <a
-            href="#join"
-            className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-sm bg-gradient-to-b from-gold to-gold-deep px-7 py-3.5 font-mono text-xs uppercase tracking-[0.22em] text-background transition-transform hover:scale-[1.02] glow-gold"
+      <div className="relative w-full mx-auto max-w-7xl px-6 grid lg:grid-cols-12 gap-8 items-center">
+        {/* LEFT — copy */}
+        <div className="lg:col-span-5 space-y-7">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-graphite/60 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground"
           >
-            <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="relative">Entrar na Comunidade</span>
-            <ArrowUpRight className="relative h-4 w-4" />
-          </a>
-          <a
-            href="#projetos"
-            className="inline-flex items-center gap-2.5 rounded-sm border border-gold/25 px-7 py-3.5 font-mono text-xs uppercase tracking-[0.22em] text-foreground/90 transition-all hover:border-gold/60 hover:bg-gold/5"
-          >
-            Conhecer o Ecossistema
-          </a>
-        </motion.div>
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald pulse-dot" />
+            comunidade técnica · 2026
+          </motion.div>
 
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.05 }}
+            className="font-display font-bold tracking-tight text-[clamp(2.8rem,6vw,5rem)] leading-[0.98]"
+          >
+            <span className="text-grad-mono">A comunidade dos </span>
+            <span className="text-grad-electric">devs e sysadmins</span>
+            <span className="text-grad-mono"> que vivem no terminal.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.18 }}
+            className="text-muted-foreground text-base sm:text-lg max-w-xl leading-relaxed"
+          >
+            Linux, IA, infraestrutura, embarcados, cibersegurança, Bitcoin e open source —
+            discutidos com a profundidade técnica que o assunto merece. Sem hype, sem gurusagem.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.3 }}
+            className="flex flex-wrap items-center gap-3"
+          >
+            <a
+              href="#join"
+              className="group relative inline-flex items-center gap-2 rounded-md bg-gradient-to-b from-electric to-electric-dim px-5 py-3 font-mono text-xs uppercase tracking-[0.2em] text-[#06080c] glow-blue transition-transform hover:scale-[1.02]"
+            >
+              <span className="absolute inset-0 rounded-md overflow-hidden">
+                <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
+              </span>
+              <span className="relative">entrar na devstão</span>
+              <ArrowUpRight className="relative h-4 w-4" />
+            </a>
+            <a
+              href="#categorias"
+              className="inline-flex items-center gap-2 rounded-md border border-border/70 px-5 py-3 font-mono text-xs uppercase tracking-[0.2em] text-foreground/85 hover:border-electric/50 hover:text-electric transition-all"
+            >
+              ver categorias
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="flex items-center gap-6 pt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/80"
+          >
+            <span><span className="text-foreground">1.248</span> peers</span>
+            <span className="h-1 w-1 rounded-full bg-electric/60" />
+            <span><span className="text-foreground">42</span> canais</span>
+            <span className="h-1 w-1 rounded-full bg-electric/60" />
+            <span><span className="text-emerald">99.99%</span> uptime</span>
+          </motion.div>
+        </div>
+
+        {/* RIGHT — terminal window */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 1.4 }}
-          className="mt-24 flex items-center justify-center gap-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70"
+          initial={{ opacity: 0, y: 24, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-7 relative"
         >
-          <span>Comunidade ativa</span>
-          <span className="h-1 w-1 rounded-full bg-gold/50 animate-pulse-gold" />
-          <span>Discussões técnicas</span>
-          <span className="h-1 w-1 rounded-full bg-gold/50 animate-pulse-gold" />
-          <span>Projetos em produção</span>
+          <div className="absolute -inset-6 bg-gradient-to-tr from-electric/20 via-violet/10 to-transparent blur-3xl rounded-3xl opacity-60 pointer-events-none" />
+          <div className="relative panel scanlines overflow-hidden">
+            {/* title bar */}
+            <div className="flex items-center justify-between px-4 h-10 border-b border-border/50 bg-[#0a0d12]/80">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-graphite-3" />
+                <span className="h-2.5 w-2.5 rounded-full bg-graphite-3" />
+                <span className="h-2.5 w-2.5 rounded-full bg-graphite-3" />
+              </div>
+              <div className="font-mono text-[10px] text-muted-foreground tracking-tight">
+                impera@devstão: ~/community
+              </div>
+              <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-emerald">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald pulse-dot" />
+                live
+              </div>
+            </div>
+
+            {/* body */}
+            <div className="p-6 sm:p-8 font-mono text-sm">
+              <div className="space-y-1.5">
+                {lines.map((l, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.3 + i * 0.12 }}
+                    className="flex gap-3"
+                  >
+                    <span className={`text-[10px] uppercase tracking-wider w-14 shrink-0 ${l.color}`}>
+                      [{l.tag}]
+                    </span>
+                    <span className="text-foreground/80 text-[12.5px]">{l.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-6 border-t border-border/40 pt-5">
+                <div className="flex items-center gap-2">
+                  <span className="text-electric">➜</span>
+                  <span className="text-violet">~/devstão</span>
+                  <span className="text-muted-foreground">on</span>
+                  <span className="text-emerald">⎇ main</span>
+                </div>
+                <div className="mt-2 flex items-center gap-2 text-[15px]">
+                  <span className="text-electric">$</span>
+                  <span className="text-foreground">{typed}</span>
+                  <span className="inline-block w-2 h-4 bg-electric caret" />
+                </div>
+              </div>
+
+              {/* mini sparkline */}
+              <div className="mt-7 grid grid-cols-3 gap-3">
+                {[
+                  { label: "throughput", value: "1.4k/s", color: "text-electric" },
+                  { label: "build_status", value: "passing", color: "text-emerald" },
+                  { label: "region", value: "sa-east-1", color: "text-violet" },
+                ].map((s) => (
+                  <div key={s.label} className="border border-border/40 rounded-md p-3 bg-[#0a0d12]/60">
+                    <div className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground">{s.label}</div>
+                    <div className={`mt-1 text-sm font-bold ${s.color}`}>{s.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* status bar */}
+            <div className="flex items-center justify-between px-4 h-7 bg-electric/15 border-t border-electric/20 font-mono text-[10px] text-electric/90">
+              <div className="flex items-center gap-4">
+                <span>⎇ main*</span>
+                <span>↓ 0  ↑ 0</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <span>UTF-8 · LF</span>
+                <span className="flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold glow-gold" />
+                  premium node
+                </span>
+              </div>
+            </div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
 
-function SectionLabel({ kicker, title, lead }: { kicker: string; title: React.ReactNode; lead?: string }) {
+/* -------------------- LOGO STRIP -------------------- */
+function LogoStrip() {
+  const stack = ["linux", "rust", "go", "python", "typescript", "postgres", "docker", "kubernetes", "bitcoin", "nginx", "tailscale", "grafana"];
+  return (
+    <section className="relative border-y border-border/40 bg-[#08080c]/60 py-5">
+      <div className="mx-auto max-w-7xl px-6 flex flex-wrap items-center justify-between gap-y-3 gap-x-6">
+        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground shrink-0">
+          ecossistema {">"}
+        </div>
+        <div className="flex flex-wrap items-center gap-x-7 gap-y-2 font-mono text-[11px] uppercase tracking-[0.25em]">
+          {stack.map((s, i) => (
+            <span key={s} className="text-muted-foreground hover:text-electric transition-colors">
+              {s}
+              {i < stack.length - 1 && <span className="ml-7 text-border">·</span>}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- SECTION HEADER -------------------- */
+function SectionHeader({ kicker, title, lead }: { kicker: string; title: React.ReactNode; lead?: string }) {
   return (
     <motion.div
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-100px" }}
-      className="mb-16 max-w-3xl"
+      viewport={{ once: true, margin: "-80px" }}
+      className="mb-14 max-w-3xl"
     >
-      <div className="mb-5 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">
-        <span className="h-px w-8 bg-gold/60" />
+      <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-graphite/60 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-electric">
+        <span className="h-1 w-1 rounded-full bg-electric" />
         {kicker}
       </div>
-      <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.02] tracking-tight">
+      <h2 className="font-display font-bold text-[clamp(2rem,4.2vw,3.6rem)] leading-[1.05] tracking-tight">
         {title}
       </h2>
-      {lead && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{lead}</p>}
+      {lead && <p className="mt-5 text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">{lead}</p>}
     </motion.div>
   );
 }
 
-function About() {
-  const pillars = [
-    { icon: Code2, title: "Quem vive de código", desc: "Devs que abrem a IDE no fim de semana — porque querem, não porque precisam." },
-    { icon: Cpu, title: "Engenharia de back-end", desc: "Backend, fullstack e infra. Quem garante que o sistema fica de pé." },
-    { icon: Wrench, title: "Automação de verdade", desc: "Se dá pra scriptar, vira script. Trabalho repetitivo é problema de design." },
-    { icon: Layers, title: "Builders e makers", desc: "Pessoas que entregam projeto rodando — não só ideia em apresentação." },
-    { icon: Network, title: "Pensamento sistêmico", desc: "Arquitetura, performance e escala discutidas com a profundidade que merecem." },
-    { icon: GitBranch, title: "Cultura open source", desc: "PR aberta, repo público, contribuição contínua. Comunidade construindo junto." },
-  ];
+/* -------------------- CATEGORIAS -------------------- */
+const categories = [
+  { icon: Terminal, name: "Linux & Shell", desc: "Distros, init systems, tooling de terminal, customização e workflow.", count: "08 canais" },
+  { icon: Cpu, name: "Programação", desc: "Rust, Go, TypeScript, Python, C. Discussão de linguagens e arquitetura.", count: "12 canais" },
+  { icon: Brain, name: "Inteligência Artificial", desc: "LLMs, agentes, fine-tuning, RAG, infra de inferência e pesquisa aplicada.", count: "06 canais" },
+  { icon: HardDrive, name: "Embarcados & Low-level", desc: "Microcontroladores, kernel, firmware, ASM e sistemas embarcados.", count: "04 canais" },
+  { icon: ShieldCheck, name: "Cibersegurança", desc: "Pentest, hardening, blue team, engenharia reversa e CTFs.", count: "05 canais" },
+  { icon: Bitcoin, name: "Bitcoin & cripto", desc: "Nodes, Lightning, custódia técnica, mining, e protocolo.", count: "03 canais" },
+  { icon: Cloud, name: "Infraestrutura", desc: "Cloud, bare metal, IaC, Kubernetes, observabilidade e SRE.", count: "07 canais" },
+  { icon: GitBranch, name: "Open Source", desc: "Contribuição, manutenção, governança e projetos da comunidade.", count: "Sempre", },
+  { icon: Network, name: "Networking", desc: "Mesh, VPN, BGP, self-hosting e infraestrutura de rede doméstica.", count: "Comunidade" },
+  { icon: Server, name: "Sysadmin & Homelab", desc: "Proxmox, TrueNAS, OPNsense, monitoramento e racks caseiros.", count: "Ativo 24/7" },
+  { icon: Lock, name: "Engenharia reversa", desc: "Análise de binários, debugging avançado, exploit dev e cracking.", count: "Avançado" },
+  { icon: Workflow, name: "Automação", desc: "CI/CD, scripts, ferramentas self-hosted e tudo que cuspe trabalho repetitivo.", count: "Permanente" },
+];
+
+function Categories() {
   return (
-    <section id="sobre" className="relative py-32 sm:py-40">
-      <div className="absolute inset-x-0 top-0 h-px gold-line opacity-30" />
+    <section id="categorias" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel
-          kicker="A Comunidade"
-          title={<>Quem está<br /><span className="gold-gradient-text">construindo junto.</span></>}
-          lead="Devstão é o espaço que o IMPERA criou para devs que levam o ofício a sério — discussão técnica densa, sem a formalidade de um ambiente corporativo."
+        <SectionHeader
+          kicker="// categorias"
+          title={<>O que <span className="text-grad-electric">circula</span> dentro da comunidade.</>}
+          lead="Mais de 40 canais organizados por domínio técnico. Programação, infra, IA, segurança, embarcados, Bitcoin — cada área com discussão densa e gente que entrega."
         />
-        <div className="grid gap-px overflow-hidden rounded-lg border border-border/60 bg-border/40 sm:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((p, i) => (
+        <div className="grid gap-px overflow-hidden rounded-xl border border-border/60 bg-border/40 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {categories.map((c, i) => (
             <motion.div
-              key={p.title}
+              key={c.name}
               variants={fadeUp}
-              custom={i}
+              custom={i % 4}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: "-50px" }}
-              className="group relative bg-[#070707] p-8 transition-colors hover:bg-[#0a0a0a]"
+              viewport={{ once: true, margin: "-40px" }}
+              className="group relative bg-[#0a0d12] p-6 transition-all hover:bg-[#0d1219]"
             >
-              <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100">
-                <div className="absolute -top-px left-6 right-6 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+              <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-electric/0 to-transparent group-hover:via-electric/60 transition-colors" />
+              <div className="flex items-start justify-between">
+                <div className="relative">
+                  <div className="absolute inset-0 -z-10 blur-xl bg-electric/0 group-hover:bg-electric/30 transition-all" />
+                  <c.icon className="h-5 w-5 text-electric/80 group-hover:text-electric transition-colors" strokeWidth={1.5} />
+                </div>
+                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
-              <p.icon className="h-6 w-6 text-gold/80" strokeWidth={1.4} />
-              <h3 className="mt-6 font-display text-2xl font-light tracking-tight">{p.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-              <div className="mt-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60">
-                {String(i + 1).padStart(2, "0")} / 06
+              <h3 className="mt-5 font-display font-semibold text-base tracking-tight text-foreground">
+                {c.name}
+              </h3>
+              <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{c.desc}</p>
+              <div className="mt-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                <span>{c.count}</span>
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-electric" />
               </div>
             </motion.div>
           ))}
@@ -236,44 +392,239 @@ function About() {
   );
 }
 
+/* -------------------- OBSERVABILITY DASHBOARD -------------------- */
+function Observability() {
+  // gerar pontos do sparkline
+  const points = Array.from({ length: 40 }, (_, i) => {
+    const x = (i / 39) * 100;
+    const y = 30 + Math.sin(i / 3) * 12 + Math.cos(i / 5) * 6 + (i > 28 ? -8 : 0);
+    return `${x},${y}`;
+  }).join(" ");
+
+  const peers = [
+    { region: "sa-east-1", status: "healthy", latency: "8ms" },
+    { region: "us-east-1", status: "healthy", latency: "42ms" },
+    { region: "eu-west-3", status: "healthy", latency: "110ms" },
+    { region: "ap-south-1", status: "degraded", latency: "240ms" },
+  ];
+
+  const logs = [
+    { t: "12:42:01", lvl: "INF", c: "text-muted-foreground", msg: "peer connected — vps-09.lab" },
+    { t: "12:42:03", lvl: "OK ", c: "text-emerald", msg: "deploy succeeded · build_id=4f7a..." },
+    { t: "12:42:08", lvl: "INF", c: "text-muted-foreground", msg: "new thread on #infra: caddy + tailscale" },
+    { t: "12:42:14", lvl: "WRN", c: "text-gold", msg: "latency spike: ap-south-1 240ms" },
+    { t: "12:42:19", lvl: "INF", c: "text-muted-foreground", msg: "scheduled job ran: backups.daily" },
+    { t: "12:42:24", lvl: "OK ", c: "text-emerald", msg: "node sync complete · btc-fullnode-02" },
+  ];
+
+  return (
+    <section id="observability" className="relative py-28 sm:py-36">
+      <div className="absolute inset-x-0 top-0 h-px hr-faint" />
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeader
+          kicker="// telemetria"
+          title={<>Comunidade no <span className="text-grad-electric">painel</span>.</>}
+          lead="Métricas vivas dos canais, peers conectados, deploys da semana e o pulso da comunidade — em formato que dev e sysadmin já entendem de olhos fechados."
+        />
+
+        <div className="grid gap-4 lg:grid-cols-12">
+          {/* Métrica grande */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="panel lg:col-span-8 p-6 relative overflow-hidden"
+          >
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">peers_active · 7d</div>
+                <div className="mt-1 flex items-baseline gap-3">
+                  <span className="font-display text-4xl font-bold text-foreground">1,248</span>
+                  <span className="font-mono text-xs text-emerald">+12.4%</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-electric">
+                <span className="h-1.5 w-1.5 rounded-full bg-electric pulse-dot" />
+                streaming
+              </div>
+            </div>
+
+            <div className="relative h-44 w-full">
+              <svg viewBox="0 0 100 60" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+                <defs>
+                  <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stopColor="oklch(0.7 0.18 250)" stopOpacity="0.45" />
+                    <stop offset="100%" stopColor="oklch(0.7 0.18 250)" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                <polyline points={`0,60 ${points} 100,60`} fill="url(#grad)" />
+                <polyline points={points} fill="none" stroke="oklch(0.72 0.2 248)" strokeWidth="0.6" />
+              </svg>
+              <div className="absolute inset-0 bg-grid-fine opacity-50 pointer-events-none" />
+            </div>
+
+            <div className="mt-4 grid grid-cols-4 gap-3 pt-4 border-t border-border/40">
+              {[
+                ["mensagens/dia", "8.4k"],
+                ["threads abertas", "312"],
+                ["deploys/sem", "42"],
+                ["uptime", "99.99%"],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">{k}</div>
+                  <div className="mt-1 font-display text-lg font-semibold text-foreground">{v}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Nodes */}
+          <motion.div
+            variants={fadeUp}
+            custom={1}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="panel lg:col-span-4 p-6"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">nodes</div>
+              <Router className="h-4 w-4 text-electric/70" strokeWidth={1.5} />
+            </div>
+            <div className="space-y-3">
+              {peers.map((p) => (
+                <div key={p.region} className="flex items-center justify-between font-mono text-[11px] py-1.5 border-b border-border/30 last:border-0">
+                  <div className="flex items-center gap-2.5">
+                    <span className={`h-1.5 w-1.5 rounded-full ${p.status === "healthy" ? "bg-emerald" : "bg-gold"} ${p.status === "healthy" ? "pulse-dot" : ""}`} />
+                    <span className="text-foreground/85">{p.region}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-muted-foreground">
+                    <span className={p.status === "healthy" ? "text-emerald" : "text-gold"}>{p.status}</span>
+                    <span>{p.latency}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 rounded-md border border-electric/20 bg-electric/5 p-3">
+              <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-electric/80">mesh status</div>
+              <div className="mt-1 font-mono text-xs text-foreground">4/4 reachable · tailscale mesh</div>
+            </div>
+          </motion.div>
+
+          {/* Logs */}
+          <motion.div
+            variants={fadeUp}
+            custom={2}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="panel lg:col-span-8 p-0 overflow-hidden"
+          >
+            <div className="flex items-center justify-between px-5 py-3 border-b border-border/40 bg-[#0a0d12]/80">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">system_logs · tail -f</div>
+              <Activity className="h-3.5 w-3.5 text-electric" />
+            </div>
+            <div className="p-5 font-mono text-[12px] space-y-1.5 max-h-72 overflow-hidden">
+              {logs.map((l, i) => (
+                <div key={i} className="flex gap-3 items-start">
+                  <span className="text-muted-foreground/60 w-20 shrink-0">{l.t}</span>
+                  <span className={`${l.c} w-10 shrink-0`}>[{l.lvl}]</span>
+                  <span className="text-foreground/85">{l.msg}</span>
+                </div>
+              ))}
+            </div>
+            <div className="border-t border-border/40 px-5 py-2 bg-[#0a0d12]/80 font-mono text-[10px] text-muted-foreground">
+              <span className="text-electric">$</span> journalctl -u devstão -f
+            </div>
+          </motion.div>
+
+          {/* Side meta */}
+          <motion.div
+            variants={fadeUp}
+            custom={3}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="panel lg:col-span-4 p-6 flex flex-col gap-5"
+          >
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">build · main</div>
+              <div className="mt-2 flex items-center gap-3">
+                <div className="h-8 w-8 rounded-md bg-emerald/15 border border-emerald/30 flex items-center justify-center">
+                  <span className="text-emerald text-xs">✓</span>
+                </div>
+                <div>
+                  <div className="font-mono text-sm text-foreground">passing</div>
+                  <div className="font-mono text-[10px] text-muted-foreground">build_id=4f7a-91bd · 12s</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-border/40 pt-5">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">power_draw</div>
+              <div className="mt-2 flex items-end gap-1 h-12">
+                {[40, 65, 50, 80, 60, 90, 70, 95, 55, 75, 85, 60].map((h, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 bg-gradient-to-t from-electric/20 to-electric/80 rounded-sm"
+                    style={{ height: `${h}%` }}
+                  />
+                ))}
+              </div>
+              <div className="mt-2 font-mono text-[10px] text-muted-foreground flex justify-between">
+                <span>24h</span><span className="text-foreground">avg 68w</span>
+              </div>
+            </div>
+            <div className="border-t border-border/40 pt-5">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">next event</div>
+              <div className="mt-2 font-mono text-xs text-foreground">live · arquitetura distribuída</div>
+              <div className="mt-1 font-mono text-[10px] text-violet">quarta · 21h00 · #lives</div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- STACK -------------------- */
 const stacks = [
-  { name: "Rust", cat: "Systems", icon: Cpu },
-  { name: "TypeScript", cat: "Language", icon: Code2 },
-  { name: "Python", cat: "Language", icon: Terminal },
-  { name: "Go", cat: "Systems", icon: Zap },
-  { name: "PostgreSQL", cat: "Database", icon: Database },
-  { name: "Redis", cat: "Cache", icon: Activity },
-  { name: "Docker", cat: "Infra", icon: Box },
-  { name: "Linux", cat: "OS", icon: Server },
-  { name: "FastAPI", cat: "Framework", icon: Zap },
-  { name: "Tauri", cat: "Desktop", icon: Box },
-  { name: "React", cat: "UI", icon: Code2 },
-  { name: "Vue", cat: "UI", icon: Code2 },
+  { name: "rust", cat: "systems", icon: Cpu },
+  { name: "go", cat: "systems", icon: Zap },
+  { name: "typescript", cat: "language", icon: TerminalSquare },
+  { name: "python", cat: "language", icon: Terminal },
+  { name: "c", cat: "low-level", icon: Cpu },
+  { name: "postgres", cat: "database", icon: Database },
+  { name: "redis", cat: "cache", icon: Activity },
+  { name: "linux", cat: "os", icon: Server },
+  { name: "docker", cat: "container", icon: Boxes },
+  { name: "kubernetes", cat: "orchestr.", icon: Layers },
+  { name: "nginx", cat: "proxy", icon: Network },
+  { name: "tailscale", cat: "mesh net", icon: Router },
+  { name: "grafana", cat: "observab.", icon: Activity },
+  { name: "proxmox", cat: "homelab", icon: HardDrive },
+  { name: "bitcoin-core", cat: "node", icon: Bitcoin },
+  { name: "wireguard", cat: "vpn", icon: Lock },
 ];
 
 function Stack() {
   return (
-    <section id="stack" className="relative py-32 sm:py-40">
-      <div className="absolute inset-0 bg-grid-fine [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]" />
+    <section id="stack" className="relative py-28 sm:py-36">
+      <div className="absolute inset-0 bg-dotgrid [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)] opacity-60" />
       <div className="relative mx-auto max-w-7xl px-6">
-        <SectionLabel
-          kicker="Stack"
-          title={<>O <span className="gold-gradient-text">arsenal</span> em uso.</>}
-          lead="As linguagens e ferramentas que aparecem nas discussões do Discord, nos projetos dos membros e nas lives técnicas do IMPERA."
+        <SectionHeader
+          kicker="// stack"
+          title={<>O <span className="text-grad-electric">arsenal</span> que circula nas discussões.</>}
+          lead="Linguagens, runtimes e ferramentas que aparecem nas threads do Discord, nas lives do IMPERA e nos projetos dos membros."
         />
 
-        <div className="glass relative overflow-hidden rounded-xl">
-          {/* terminal header */}
-          <div className="flex items-center justify-between border-b border-border/50 bg-black/40 px-5 py-3">
-            <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-gold/30" />
-              <span className="h-2.5 w-2.5 rounded-full bg-gold/50" />
-              <span className="h-2.5 w-2.5 rounded-full bg-gold" />
+        <div className="panel scanlines overflow-hidden">
+          <div className="flex items-center justify-between px-5 h-10 border-b border-border/50 bg-[#0a0d12]/80">
+            <div className="font-mono text-[10px] text-muted-foreground tracking-tight">devstão://stack · readonly</div>
+            <div className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-electric">
+              <span className="h-1.5 w-1.5 rounded-full bg-electric pulse-dot" />
+              16 entries
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              devstao://stack — ativo
-            </div>
-            <div className="font-mono text-[10px] text-gold animate-pulse-gold">● online</div>
           </div>
 
           <div className="grid gap-px bg-border/30 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -285,27 +636,26 @@ function Stack() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="group relative flex items-center gap-4 bg-[#080808] p-5 transition-all hover:bg-[#0d0c08]"
+                className="group relative flex items-center gap-3.5 bg-[#0a0d12] p-4 transition-all hover:bg-[#0d1219]"
               >
-                <div className="relative">
-                  <s.icon className="h-5 w-5 text-gold/70 transition-colors group-hover:text-gold" strokeWidth={1.4} />
-                  <div className="absolute inset-0 -z-10 scale-150 rounded-full bg-gold/0 blur-xl transition-all group-hover:bg-gold/30" />
+                <div className="relative shrink-0">
+                  <div className="absolute inset-0 -z-10 blur-xl bg-electric/0 group-hover:bg-electric/30 transition-all" />
+                  <s.icon className="h-4 w-4 text-electric/70 group-hover:text-electric transition-colors" strokeWidth={1.5} />
                 </div>
-                <div className="flex-1">
-                  <div className="font-display text-lg leading-none tracking-tight">{s.name}</div>
-                  <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                    {s.cat}
-                  </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-mono text-sm text-foreground leading-tight">{s.name}</div>
+                  <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground mt-0.5">{s.cat}</div>
                 </div>
-                <div className="font-mono text-[10px] text-muted-foreground/50">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
+                <span className="font-mono text-[9px] text-muted-foreground/50">{String(i + 1).padStart(2, "0")}</span>
               </motion.div>
             ))}
           </div>
 
-          <div className="border-t border-border/50 bg-black/40 px-5 py-3 font-mono text-[10px] tracking-wider text-muted-foreground">
-            <span className="text-gold">$</span> devstao --membros 4.2k --online 312 --uptime 24/7
+          <div className="border-t border-border/50 bg-[#0a0d12]/80 px-5 py-2.5 font-mono text-[11px] text-muted-foreground flex items-center justify-between">
+            <div>
+              <span className="text-electric">$</span> devstão --members 1.248 --online 312 --uptime 99.99
+            </div>
+            <span className="text-electric/80">exit 0</span>
           </div>
         </div>
       </div>
@@ -313,43 +663,31 @@ function Stack() {
   );
 }
 
+/* -------------------- PROJETOS OPEN SOURCE -------------------- */
 const projects = [
-  {
-    name: "Aether",
-    cat: "Side project",
-    desc: "Orquestrador de agentes que começou como experimento no Discord e virou plataforma real, mantida pela comunidade.",
-    tag: "Rust · Tokio",
-  },
-  {
-    name: "Forge CLI",
-    cat: "Ferramenta",
-    desc: "CLI de scaffolding para projetos novos — feita por devs cansados de repetir boilerplate em cada início de stack.",
-    tag: "Go · TUI",
-  },
-  {
-    name: "Lumen",
-    cat: "App desktop",
-    desc: "Aplicativo cross-platform que automatiza fluxos repetitivos do dia a dia técnico. Roda em Linux, macOS e Windows.",
-    tag: "Tauri · React",
-  },
-  {
-    name: "Pulse",
-    cat: "Engine",
-    desc: "Engine de eventos em tempo real nascida de uma discussão de arquitetura entre membros da comunidade.",
-    tag: "Rust · Kafka",
-  },
+  { name: "aether", lang: "rust", stars: "2.4k", desc: "Orquestrador de agentes que nasceu de uma thread no Discord e virou plataforma real.", tag: "rust · tokio · grpc" },
+  { name: "forge", lang: "go", stars: "1.1k", desc: "CLI de scaffolding com TUI moderna — cuspe projeto novo em segundos.", tag: "go · bubbletea" },
+  { name: "lumen", lang: "ts", stars: "812", desc: "App desktop cross-platform para automatizar fluxos chatos de dev e sysadmin.", tag: "tauri · rust · react" },
+  { name: "pulse", lang: "rust", stars: "1.7k", desc: "Engine de eventos em tempo real nascida de discussão de arquitetura entre membros.", tag: "rust · kafka · nats" },
 ];
+
+const langColor: Record<string, string> = {
+  rust: "bg-[#ce422b]",
+  go: "bg-[#00add8]",
+  ts: "bg-[#3178c6]",
+  python: "bg-[#3776ab]",
+};
 
 function Projects() {
   return (
-    <section id="projetos" className="relative py-32 sm:py-40">
+    <section id="projetos" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel
-          kicker="Projetos"
-          title={<>O que está sendo<br /><span className="gold-gradient-text">construído.</span></>}
-          lead="Side projects que viraram open source, ferramentas internas que ganharam tração, experimentos técnicos discutidos a fundo. Tudo nasce dentro da comunidade."
+        <SectionHeader
+          kicker="// projetos"
+          title={<>Open source <span className="text-grad-electric">vivo</span>, mantido pela comunidade.</>}
+          lead="Ferramentas que nasceram de discussões internas, ganharam tração e hoje rodam em produção fora dela. Tudo público, tudo auditável."
         />
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {projects.map((p, i) => (
             <motion.article
               key={p.name}
@@ -357,28 +695,33 @@ function Projects() {
               custom={i}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: "-50px" }}
-              className="glass glass-hover group relative overflow-hidden rounded-xl"
+              viewport={{ once: true, margin: "-40px" }}
+              className="panel panel-hover group relative overflow-hidden"
             >
-              {/* visual area */}
-              <div className="relative aspect-[16/9] overflow-hidden border-b border-border/50 bg-gradient-to-br from-[#0a0805] via-[#080808] to-black">
-                <div className="absolute inset-0 bg-grid-fine opacity-50 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-                <div className="absolute -top-10 -right-10 h-48 w-48 rounded-full bg-gold/10 blur-3xl transition-all group-hover:bg-gold/20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="font-display text-7xl font-light tracking-tight text-gold/15 transition-transform duration-700 group-hover:scale-110">
-                    {p.name.split(" ").map(w => w[0]).join("")}
-                  </div>
+              <div className="flex items-center justify-between px-5 h-9 border-b border-border/50 bg-[#0a0d12]/80">
+                <div className="flex items-center gap-2 font-mono text-[11px] text-muted-foreground">
+                  <Github className="h-3.5 w-3.5 text-electric/70" strokeWidth={1.5} />
+                  <span>devstao/<span className="text-foreground">{p.name}</span></span>
                 </div>
-                <div className="absolute bottom-4 left-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-gold/70">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold" />
-                  {p.cat}
-                </div>
-                <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-gold/40 transition-all group-hover:text-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <div className="font-mono text-[10px] text-muted-foreground">★ {p.stars}</div>
               </div>
               <div className="p-7">
-                <h3 className="font-display text-3xl font-light tracking-tight">{p.name}</h3>
-                <p className="mt-3 text-muted-foreground">{p.desc}</p>
-                <div className="mt-6 font-mono text-[10px] uppercase tracking-[0.3em] text-gold/60">{p.tag}</div>
+                <div className="flex items-baseline gap-3">
+                  <h3 className="font-display font-bold text-3xl tracking-tight text-foreground">{p.name}</h3>
+                  <span className="font-mono text-xs text-muted-foreground">v2.4.0</span>
+                </div>
+                <p className="mt-3 text-muted-foreground leading-relaxed">{p.desc}</p>
+                <div className="mt-6 flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono text-[11px]">
+                    <span className={`h-2 w-2 rounded-full ${langColor[p.lang]}`} />
+                    <span className="text-muted-foreground">{p.tag}</span>
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-electric/60 group-hover:text-electric group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </div>
+              </div>
+              <div className="border-t border-border/40 px-5 py-2.5 bg-[#0a0d12]/60 font-mono text-[10px] text-muted-foreground flex items-center justify-between">
+                <span>last commit: 2h ago</span>
+                <span className="text-emerald">● healthy</span>
               </div>
             </motion.article>
           ))}
@@ -388,24 +731,25 @@ function Projects() {
   );
 }
 
+/* -------------------- CONTENT FEED -------------------- */
 const content = [
-  { tag: "Vídeo", title: "Como funciona um sistema distribuído na prática", meta: "IMPERA · 42 min" },
-  { tag: "Artigo", title: "Engenharia reversa em binários: um estudo prático", meta: "Blog · 18 min" },
-  { tag: "Tutorial", title: "Construindo um runtime em Rust do zero", meta: "Série · 6 partes" },
-  { tag: "Desafio", title: "Implementando um scheduler do zero", meta: "Aberto · 312 inscritos" },
-  { tag: "Live", title: "Discussão aberta: infraestrutura sob pressão", meta: "Toda quarta · 21h" },
-  { tag: "Workshop", title: "Colocando um agente autônomo em produção", meta: "Hands-on · Avançado" },
+  { tag: "vídeo", title: "Como funciona um sistema distribuído na prática", meta: "IMPERA · 42min" },
+  { tag: "artigo", title: "Engenharia reversa em binários: estudo prático", meta: "blog · 18min" },
+  { tag: "tutorial", title: "Construindo um runtime em Rust do zero", meta: "série · 6 partes" },
+  { tag: "live", title: "Discussão aberta: infraestrutura sob pressão", meta: "quarta · 21h" },
+  { tag: "desafio", title: "Implementando um scheduler do zero", meta: "aberto · 312 inscritos" },
+  { tag: "workshop", title: "Subindo um node Bitcoin com Lightning", meta: "hands-on · avançado" },
 ];
 
 function Content() {
   return (
-    <section id="conteudo" className="relative py-32 sm:py-40">
-      <div className="absolute inset-x-0 top-0 h-px gold-line opacity-30" />
+    <section id="conteudo" className="relative py-28 sm:py-36">
+      <div className="absolute inset-x-0 top-0 h-px hr-faint" />
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel
-          kicker="Conteúdo"
-          title={<>O que circula <span className="gold-gradient-text">por aqui.</span></>}
-          lead="Conteúdo técnico do IMPERA, artigos dos membros, lives semanais, desafios abertos e workshops avançados. Material novo entrando toda semana."
+        <SectionHeader
+          kicker="// conteúdo"
+          title={<>Material técnico <span className="text-grad-electric">denso</span>, semana após semana.</>}
+          lead="Vídeos do IMPERA, artigos dos membros, lives, desafios e workshops avançados. Nada de superficial."
         />
         <div className="grid gap-px overflow-hidden rounded-xl border border-border/60 bg-border/40 md:grid-cols-2 lg:grid-cols-3">
           {content.map((c, i) => (
@@ -417,20 +761,20 @@ function Content() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="group relative block bg-[#070707] p-8 transition-all hover:bg-[#0c0a05]"
+              className="group relative block bg-[#0a0d12] p-7 transition-all hover:bg-[#0d1219]"
             >
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+                <span className="inline-flex items-center gap-2 rounded-md border border-electric/30 bg-electric/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-electric">
                   {c.tag}
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:text-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground/70 group-hover:text-electric group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </div>
-              <h3 className="mt-8 font-display text-2xl font-light leading-tight tracking-tight transition-colors group-hover:text-gold-soft">
+              <h3 className="mt-7 font-display font-semibold text-lg leading-tight tracking-tight transition-colors group-hover:text-foreground">
                 {c.title}
               </h3>
-              <div className="mt-12 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+              <div className="mt-10 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                 <span>{c.meta}</span>
-                <span>{String(i + 1).padStart(2, "0")}</span>
+                <span>{String(i + 1).padStart(2, "0")}/{String(content.length).padStart(2, "0")}</span>
               </div>
             </motion.a>
           ))}
@@ -440,100 +784,55 @@ function Content() {
   );
 }
 
-const phases = [
-  { n: "01", t: "Aprender", d: "Estudar com profundidade — documentação, código-fonte, lives, perguntas no Discord. Curiosidade é o ponto de partida." },
-  { n: "02", t: "Construir", d: "Sair da teoria. Abrir o editor, escrever código, quebrar, depurar e entender de verdade." },
-  { n: "03", t: "Automatizar", d: "Identificar o que se repete e transformar em script, pipeline ou ferramenta. Trabalho manual é falha de design." },
-  { n: "04", t: "Escalar", d: "Quando o sistema começa a sustentar carga real, a engenharia muda — performance, observabilidade e arquitetura entram em cena." },
-  { n: "05", t: "Dominar", d: "Ensinar, contribuir com open source e puxar a comunidade junto. Conhecimento que circula é conhecimento que dura." },
-];
-
-function Philosophy() {
-  return (
-    <section id="filosofia" className="relative py-32 sm:py-40">
-      <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel
-          kicker="O Caminho"
-          title={<>O caminho <span className="gold-gradient-text">Devstão</span>.</>}
-          lead="Cinco fases que todo engenheiro percorre. Não é roadmap fechado nem curso — é a trajetória natural de quem leva a profissão a sério."
-        />
-        <div className="relative">
-          {/* vertical line */}
-          <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent md:left-1/2 md:-translate-x-1/2" />
-          <div className="space-y-10">
-            {phases.map((p, i) => (
-              <motion.div
-                key={p.n}
-                variants={fadeUp}
-                custom={i}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-80px" }}
-                className={`relative flex items-start gap-8 md:items-center ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* node */}
-                <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center md:absolute md:left-1/2 md:-translate-x-1/2">
-                  <div className="absolute inset-0 rounded-full bg-gold/10 blur-xl animate-pulse-gold" />
-                  <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-background font-mono text-xs text-gold">
-                    {p.n}
-                  </div>
-                </div>
-                {/* card */}
-                <div className={`flex-1 md:max-w-[44%] ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                  <div className="glass glass-hover rounded-xl p-7">
-                    <h3 className="font-display text-3xl font-light tracking-tight gold-gradient-text">{p.t}</h3>
-                    <p className="mt-3 leading-relaxed text-muted-foreground">{p.d}</p>
-                  </div>
-                </div>
-                <div className="hidden flex-1 md:block" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
+/* -------------------- CTA -------------------- */
 function CTA() {
   return (
-    <section id="join" className="relative py-32 sm:py-40">
+    <section id="join" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-2xl border border-gold/25 bg-gradient-to-b from-[#0a0805] to-[#050505] p-12 text-center sm:p-20"
+          className="relative overflow-hidden rounded-2xl border border-electric/30 bg-gradient-to-b from-[#0c1219] to-[#07090d] p-10 sm:p-16"
         >
-          <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)] opacity-60" />
-          <div className="absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
-          <div className="relative">
-            <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.4em] text-gold">Faça parte</div>
-            <h2 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1] tracking-tight">
-              Entre para a <span className="gold-gradient-text">Devstão.</span>
+          <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)] opacity-60" />
+          <div className="absolute -top-24 left-1/2 h-56 w-[700px] -translate-x-1/2 rounded-full bg-electric/15 blur-3xl" />
+          <div className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.25em] text-electric/70 flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-electric pulse-dot" /> conexão pronta
+          </div>
+          <div className="relative max-w-2xl">
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-electric mb-5">// join</div>
+            <h2 className="font-display font-bold text-[clamp(2rem,5vw,4rem)] leading-[1.04] tracking-tight">
+              <span className="text-grad-mono">Conecte seu node à </span>
+              <span className="text-grad-electric">Devstão.</span>
             </h2>
-            <p className="mx-auto mt-7 max-w-xl text-lg text-muted-foreground">
-              Sem processo seletivo. Se você constrói, estuda e quer trocar ideia com gente
-              do mesmo nível, o lugar é aqui.
+            <p className="mt-5 text-muted-foreground text-base sm:text-lg leading-relaxed max-w-xl">
+              Sem processo seletivo, sem mensalidade vendida como exclusividade.
+              Se você constrói, estuda e quer trocar ideia com gente do mesmo nível, o lugar é aqui.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+            <div className="mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <a
                 href="https://tr.ee/9Pooktcf5n"
-                
-                className="group inline-flex items-center gap-2.5 rounded-sm bg-gradient-to-b from-gold to-gold-deep px-8 py-4 font-mono text-xs uppercase tracking-[0.22em] text-background glow-gold transition-transform hover:scale-[1.02]"
+                className="group inline-flex items-center gap-2.5 rounded-md bg-gradient-to-b from-electric to-electric-dim px-7 py-3.5 font-mono text-xs uppercase tracking-[0.22em] text-[#06080c] glow-blue hover:scale-[1.02] transition-transform"
               >
-                Entrar na comunidade
+                entrar no discord
                 <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href="https://youtube.com/@RenatoIMPERA"
-                className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-gold"
+                className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-electric transition-colors inline-flex items-center gap-2"
               >
-                Conhecer o canal do IMPERA →
+                canal do IMPERA <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
+            </div>
+
+            <div className="mt-10 pt-6 border-t border-border/40 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+              <span><span className="text-foreground">1.248</span> peers</span>
+              <span><span className="text-foreground">42</span> canais ativos</span>
+              <span><span className="text-emerald">99.99%</span> uptime</span>
+              <span><span className="text-foreground">$0</span> · open community</span>
             </div>
           </div>
         </motion.div>
@@ -542,69 +841,108 @@ function CTA() {
   );
 }
 
+/* -------------------- FOOTER -------------------- */
 function Footer() {
   const links = [
-    { icon: Github, label: "GitHub" },
-    { icon: MessageCircle, label: "Discord" },
-    { icon: Youtube, label: "YouTube" },
-    { icon: Linkedin, label: "LinkedIn" },
-    { icon: Mail, label: "Email" },
+    { icon: Github, label: "GitHub", href: "#" },
+    { icon: MessageCircle, label: "Discord", href: "https://tr.ee/9Pooktcf5n" },
+    { icon: Youtube, label: "YouTube", href: "https://youtube.com/@RenatoIMPERA" },
+    { icon: Radio, label: "RSS", href: "#" },
   ];
   return (
-    <footer className="relative border-t border-border/60 pt-20 pb-10">
-      <div className="absolute inset-x-0 top-0 h-px gold-line" />
+    <footer className="relative border-t border-border/60 pt-16 pb-8 bg-[#07090d]">
+      <div className="absolute inset-x-0 top-0 h-px hr-electric opacity-50" />
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-16 lg:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
               <div className="relative h-7 w-7">
-                <div className="absolute inset-0 rotate-45 border border-gold/60" />
-                <div className="absolute inset-1.5 rotate-45 bg-gradient-to-br from-gold to-gold-deep" />
+                <div className="absolute inset-0 rounded-md bg-gradient-to-br from-electric to-violet glow-blue" />
+                <div className="absolute inset-[3px] rounded-[4px] bg-[#0a0d12] flex items-center justify-center">
+                  <span className="font-mono text-[11px] font-bold text-electric">D</span>
+                </div>
               </div>
-              <span className="font-display text-2xl tracking-wide gold-gradient-text">Devstão</span>
+              <span className="font-mono text-base tracking-tight text-foreground">
+                devstão<span className="text-electric">_</span>
+              </span>
             </div>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              A comunidade do <span className="text-gold">IMPERA</span>. Engenharia de software,
-              discussão técnica densa e projetos construídos em conjunto.
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Comunidade técnica criada por <span className="text-electric">IMPERA</span>.
+              Linux, programação, IA, infra, embarcados, cibersegurança, Bitcoin e open source.
             </p>
-            <div className="mt-8 flex gap-3">
+            <div className="mt-7 flex gap-2">
               {links.map((l) => (
                 <a
                   key={l.label}
-                  href="#"
+                  href={l.href}
                   aria-label={l.label}
-                  className="group flex h-10 w-10 items-center justify-center rounded-sm border border-border/60 transition-all hover:border-gold/60 hover:bg-gold/5"
+                  className="group flex h-9 w-9 items-center justify-center rounded-md border border-border/60 bg-graphite/40 hover:border-electric/50 hover:bg-electric/10 transition-all"
                 >
-                  <l.icon className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-gold" strokeWidth={1.6} />
+                  <l.icon className="h-4 w-4 text-muted-foreground group-hover:text-electric transition-colors" strokeWidth={1.5} />
                 </a>
               ))}
             </div>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">Navegar</div>
-            <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-              <li><a href="#sobre" className="transition-colors hover:text-gold">Sobre</a></li>
-              <li><a href="#stack" className="transition-colors hover:text-gold">Stack</a></li>
-              <li><a href="#projetos" className="transition-colors hover:text-gold">Projetos</a></li>
-              <li><a href="#conteudo" className="transition-colors hover:text-gold">Conteúdo</a></li>
-              <li><a href="#filosofia" className="transition-colors hover:text-gold">Filosofia</a></li>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-electric">navegar</div>
+            <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground font-mono">
+              <li><a href="#categorias" className="hover:text-electric transition-colors">categorias</a></li>
+              <li><a href="#stack" className="hover:text-electric transition-colors">stack</a></li>
+              <li><a href="#projetos" className="hover:text-electric transition-colors">projetos</a></li>
+              <li><a href="#observability" className="hover:text-electric transition-colors">telemetria</a></li>
+              <li><a href="#conteudo" className="hover:text-electric transition-colors">conteúdo</a></li>
             </ul>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">Comunidade</div>
-            <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="transition-colors hover:text-gold">Entrar no Discord</a></li>
-              <li><a href="#" className="transition-colors hover:text-gold">Como funciona</a></li>
-              <li><a href="#" className="transition-colors hover:text-gold">Manifesto</a></li>
-              <li><a href="#" className="transition-colors hover:text-gold">Contato</a></li>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-electric">comunidade</div>
+            <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground font-mono">
+              <li><a href="https://tr.ee/9Pooktcf5n" className="hover:text-electric transition-colors">entrar no discord</a></li>
+              <li><a href="#" className="hover:text-electric transition-colors">como funciona</a></li>
+              <li><a href="#" className="hover:text-electric transition-colors">manifesto</a></li>
+              <li><a href="#" className="hover:text-electric transition-colors">contato</a></li>
             </ul>
           </div>
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-electric">status</div>
+            <div className="mt-4 space-y-3 font-mono text-xs">
+              <div className="flex items-center justify-between text-muted-foreground">
+                <span>discord</span>
+                <span className="text-emerald flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald pulse-dot" /> operational
+                </span>
+              </div>
+              <div className="flex items-center justify-between text-muted-foreground">
+                <span>mesh</span>
+                <span className="text-emerald flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald pulse-dot" /> 4/4
+                </span>
+              </div>
+              <div className="flex items-center justify-between text-muted-foreground">
+                <span>build</span>
+                <span className="text-emerald">passing</span>
+              </div>
+              <div className="flex items-center justify-between text-muted-foreground">
+                <span>region</span>
+                <span className="text-foreground">sa-east-1</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-border/40 pt-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70 sm:flex-row sm:items-center">
-          <div>© {new Date().getFullYear()} Devstão · comunidade criada por IMPERA</div>
-          <div className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold" />
-            sistema online
+
+        {/* status bar */}
+        <div className="mt-14 rounded-md border border-border/50 bg-[#0a0d12]/80 px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <div className="flex items-center gap-4 text-muted-foreground">
+            <span className="text-electric">⎇ main*</span>
+            <span>↓ 0 ↑ 0</span>
+            <span>Ln 1, Col 1</span>
+            <span>UTF-8 · LF</span>
+          </div>
+          <div className="flex items-center gap-4 text-muted-foreground">
+            <span>© {new Date().getFullYear()} devstão</span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald pulse-dot" />
+              <span className="text-emerald">sistema online</span>
+            </span>
           </div>
         </div>
       </div>
@@ -612,16 +950,18 @@ function Footer() {
   );
 }
 
+/* -------------------- PAGE -------------------- */
 function Index() {
   return (
-    <main className="relative min-h-screen bg-[#050505] text-foreground">
+    <main className="relative min-h-screen bg-[#07090d] text-foreground">
       <Nav />
       <Hero />
-      <About />
+      <LogoStrip />
+      <Categories />
+      <Observability />
       <Stack />
       <Projects />
       <Content />
-      <Philosophy />
       <CTA />
       <Footer />
     </main>
