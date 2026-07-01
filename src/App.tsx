@@ -374,6 +374,165 @@ function Categories() {
   );
 }
 
+/* -------------------- STACK -------------------- */
+const stackGroups = [
+  {
+    label: "linguagens",
+    items: ["Rust", "Go", "TypeScript", "Python", "C/C++", "Zig"],
+  },
+  {
+    label: "infraestrutura",
+    items: ["Linux", "Docker", "Kubernetes", "Terraform", "Nginx", "Proxmox"],
+  },
+  {
+    label: "dados & rede",
+    items: ["PostgreSQL", "Redis", "Kafka", "Tailscale", "BGP", "WireGuard"],
+  },
+  {
+    label: "ia & segurança",
+    items: ["LLMs", "PyTorch", "OpenAI", "Ghidra", "Burp Suite", "OpenSSL"],
+  },
+];
+
+function Stack() {
+  return (
+    <section id="stack" className="relative py-28 sm:py-36">
+      <div className="absolute inset-x-0 top-0 h-px hr-faint" />
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeader
+          kicker="// stack"
+          title={<>
+            O arsenal que a <span className="text-grad-electric">galera usa</span>.
+          </>}
+          lead="Linguagens, ferramentas e plataformas que aparecem nas discussões, nos projetos e nos setups da comunidade."
+        />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {stackGroups.map((g, i) => (
+            <motion.div
+              key={g.label}
+              variants={fadeUp}
+              custom={i}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-40px" }}
+              className="panel p-5"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <TerminalSquare className="h-4 w-4 text-electric" strokeWidth={1.5} />
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-electric">{g.label}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {g.items.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded border border-border/50 bg-[#0a0d12]/80 px-2.5 py-1 font-mono text-[11px] text-muted-foreground hover:text-foreground hover:border-electric/40 transition-colors"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- PROJETOS -------------------- */
+const projects = [
+  {
+    name: "devstao-cli",
+    desc: "CLI da comunidade para gerenciar sessões, desafios e integrações com o Discord.",
+    lang: "Go",
+    tag: "tooling",
+    stars: "128",
+  },
+  {
+    name: "labctl",
+    desc: "Orquestrador de homelab com suporte a Proxmox, TrueNAS e DNS interno.",
+    lang: "Rust",
+    tag: "infra",
+    stars: "84",
+  },
+  {
+    name: "btcpanel",
+    desc: "Dashboard auto-hospedado para nodes Bitcoin e Lightning com alertas em tempo real.",
+    lang: "TypeScript",
+    tag: "bitcoin",
+    stars: "210",
+  },
+  {
+    name: "kernel-notes",
+    desc: "Repositório colaborativo de estudos, anotações e labs de low-level.",
+    lang: "C",
+    tag: "study",
+    stars: "56",
+  },
+];
+
+const langColor: Record<string, string> = {
+  Go: "bg-cyan-400",
+  Rust: "bg-orange-400",
+  TypeScript: "bg-blue-400",
+  C: "bg-violet-400",
+};
+
+function Projects() {
+  return (
+    <section id="projetos" className="relative py-28 sm:py-36">
+      <div className="absolute inset-x-0 top-0 h-px hr-faint" />
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeader
+          kicker="// projetos"
+          title={<>
+            Coisas que a comunidade <span className="text-grad-electric">constrói</span>.
+          </>}
+          lead="Ferramentas que nasceram de discussões internas, ganharam tração e hoje rodam em produção fora dela. Tudo público, tudo auditável."
+        />
+        <div className="grid gap-5 lg:grid-cols-2">
+          {projects.map((p, i) => (
+            <motion.article
+              key={p.name}
+              variants={fadeUp}
+              custom={i}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-40px" }}
+              className="panel panel-hover group relative overflow-hidden"
+            >
+              <div className="flex items-center justify-between px-5 h-9 border-b border-border/50 bg-[#0a0d12]/80">
+                <div className="flex items-center gap-2 font-mono text-[11px] text-muted-foreground">
+                  <Github className="h-3.5 w-3.5 text-electric/70" strokeWidth={1.5} />
+                  <span>devstao/<span className="text-foreground">{p.name}</span></span>
+                </div>
+                <div className="font-mono text-[10px] text-muted-foreground">★ {p.stars}</div>
+              </div>
+              <div className="p-7">
+                <div className="flex items-baseline gap-3">
+                  <h3 className="font-display font-bold text-3xl tracking-tight text-foreground">{p.name}</h3>
+                  <span className="font-mono text-xs text-muted-foreground">v2.4.0</span>
+                </div>
+                <p className="mt-3 text-muted-foreground leading-relaxed">{p.desc}</p>
+                <div className="mt-6 flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono text-[11px]">
+                    <span className={`h-2 w-2 rounded-full ${langColor[p.lang]}`} />
+                    <span className="text-muted-foreground">{p.tag}</span>
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-electric/60 group-hover:text-electric group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </div>
+              </div>
+              <div className="border-t border-border/40 px-5 py-2.5 bg-[#0a0d12]/60 font-mono text-[10px] text-muted-foreground flex items-center justify-between">
+                <span>last commit: 2h ago</span>
+                <span className="text-emerald">● healthy</span>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* -------------------- CONTENT FEED -------------------- */
 const content = [
