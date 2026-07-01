@@ -933,7 +933,7 @@ function Footer() {
 }
 
 /* -------------------- PAGE -------------------- */
-function Index() {
+export default function Index() {
   return (
     <main className="relative min-h-screen bg-[#07090d] text-foreground">
       <Nav />
