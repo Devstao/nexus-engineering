@@ -871,14 +871,14 @@ function Footer() {
               <li><a href="#categorias" className="hover:text-electric transition-colors">categorias</a></li>
               <li><a href="#stack" className="hover:text-electric transition-colors">stack</a></li>
               <li><a href="#projetos" className="hover:text-electric transition-colors">projetos</a></li>
-              <li><a href="#observability" className="hover:text-electric transition-colors">telemetria</a></li>
+              <li><a href="#conteudo" className="hover:text-electric transition-colors">conteúdo</a></li>
               <li><a href="#conteudo" className="hover:text-electric transition-colors">conteúdo</a></li>
             </ul>
           </div>
           <div>
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-electric">comunidade</div>
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground font-mono">
-              <li><a href="https://tr.ee/9Pooktcf5n" className="hover:text-electric transition-colors">entrar no discord</a></li>
+              <li><a href="https://tr.ee/9Pooktcf5n" className="hover:text-electric transition-colors">entrar para a comunidade</a></li>
               <li><a href="#" className="hover:text-electric transition-colors">como funciona</a></li>
               <li><a href="#" className="hover:text-electric transition-colors">manifesto</a></li>
               <li><a href="#" className="hover:text-electric transition-colors">contato</a></li>
