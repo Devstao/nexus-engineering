@@ -764,7 +764,6 @@ export default function Index() {
       <Content />
       <CTA />
       <Footer />
-      <Footer />
     </main>
   );
 }
