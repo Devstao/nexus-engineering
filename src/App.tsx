@@ -60,7 +60,6 @@ function Nav() {
           <a href="#categorias" className="hover:text-electric transition-colors">categorias</a>
           <a href="#stack" className="hover:text-electric transition-colors">stack</a>
           <a href="#projetos" className="hover:text-electric transition-colors">projetos</a>
-          <a href="#projetos" className="hover:text-electric transition-colors">projetos</a>
           <a href="#conteudo" className="hover:text-electric transition-colors">conteúdo</a>
         </nav>
         <a
@@ -763,7 +762,7 @@ export default function Index() {
       <Stack />
       <Projects />
       <Content />
-      <Content />
+      <CTA />
       <CTA />
       <Footer />
     </main>
