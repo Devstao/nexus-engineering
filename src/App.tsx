@@ -799,7 +799,7 @@ function CTA() {
                 href="https://tr.ee/9Pooktcf5n"
                 className="group inline-flex items-center gap-2.5 rounded-md bg-gradient-to-b from-electric to-electric-dim px-7 py-3.5 font-mono text-xs uppercase tracking-[0.22em] text-[#06080c] glow-blue hover:scale-[1.02] transition-transform"
               >
-                entrar no discord
+                entrar para a comunidade
                 <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
