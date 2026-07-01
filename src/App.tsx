@@ -534,7 +534,6 @@ function Footer() {
               <li><a href="#stack" className="hover:text-electric transition-colors">stack</a></li>
               <li><a href="#projetos" className="hover:text-electric transition-colors">projetos</a></li>
               <li><a href="#conteudo" className="hover:text-electric transition-colors">conteúdo</a></li>
-              <li><a href="#conteudo" className="hover:text-electric transition-colors">conteúdo</a></li>
             </ul>
           </div>
           <div>
@@ -603,7 +602,7 @@ export default function Index() {
       <LogoStrip />
       <Categories />
       <Stack />
-      <Stack />
+      <Projects />
       <Projects />
       <Content />
       <CTA />
