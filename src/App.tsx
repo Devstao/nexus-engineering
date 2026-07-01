@@ -762,7 +762,7 @@ export default function Index() {
       <Categories />
       <Stack />
       <Projects />
-      <Projects />
+      <Content />
       <Content />
       <CTA />
       <Footer />
