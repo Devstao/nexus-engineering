@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import {
   Activity,
   ArrowUpRight,
@@ -27,23 +26,6 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Devstão — comunidade técnica do IMPERA" },
-      {
-        name: "description",
-        content:
-          "Comunidade developer-centric do IMPERA. Linux, programação, IA, embarcados, cibersegurança, Bitcoin, infraestrutura e open source.",
-      },
-      { property: "og:title", content: "Devstão · IMPERA" },
-      { property: "og:description", content: "Comunidade técnica para devs, sysadmins e engenheiros de infraestrutura." },
-      { property: "og:type", content: "website" },
-    ],
-  }),
-  component: Index,
-});
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -951,7 +933,7 @@ function Footer() {
 }
 
 /* -------------------- PAGE -------------------- */
-function Index() {
+export default function Index() {
   return (
     <main className="relative min-h-screen bg-[#07090d] text-foreground">
       <Nav />
