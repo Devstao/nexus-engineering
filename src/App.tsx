@@ -940,7 +940,7 @@ export default function Index() {
       <Hero />
       <LogoStrip />
       <Categories />
-      <Observability />
+      <Stack />
       <Stack />
       <Projects />
       <Content />
